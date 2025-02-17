@@ -34,7 +34,7 @@ p{
 /* Optional styling for the image */
 img {
     margin-right: 10px; /* Adjust spacing between images */
-    width: 180px; /* Adjust the width as needed */
+    width: 400px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Optional: Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -206,7 +206,7 @@ nav{
 }
 .active-link{
     position: relative;
-    color: var(--first-color);
+    color:var(--text-color-second);
     transition: .3;
 }
 .active-link::after{
@@ -427,7 +427,7 @@ padding-inline: 20px;}
 .skillssub-header{
     margin-bottom: 2px;
     font-size: 19px;
-    background: var(--big-color);
+    background: rgb(10, 44, 88);
     color: var(--color-white);
     padding: 2px 10px;
     border-radius: 5px;
@@ -439,8 +439,8 @@ padding-inline: 20px;}
 }
 .skills-list span{
     font-size: 14px;
-    background: var(--first-color);
-    color: var(--color-white);
+    background: #6b57e000;
+    color: #fff;
     padding: 2px 10px;
     border-radius: 5px;
 }
@@ -460,8 +460,8 @@ padding-inline: 20px;}
     align-items: center;
     flex-direction: column;
     width: 40%;
-    height: 250px;
-    background: var(--first-color);
+    height: 350px;
+    background: rgb(20, 28, 85);
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
@@ -508,7 +508,7 @@ padding-inline: 20px;}
     padding: 20px 30px;
     width: 100%;
     height: 315px;
-    background: var(--second-color);
+    background: #5c74ac;
     border-radius: 10px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
@@ -879,8 +879,7 @@ r   .image, .image img{
                 <p>I'm <span class="typedText"></span></p>
             </div>
             <div class="featured-text-info">
-                <p>Experienced Business Analyst with a passion for challenging roles in Analysis.
-                </p>
+                <p>Data Analyst with a strong foundation in SQL, Python, Power BI, and Tableau, delivering actionable insights through data analysis and visualization.<p></p> 
             </div>
             <div class="featured-text-btn" onclick="window.location.href='https://github.com/katlakavyasri/Kavya-Sri-Katla/blob/main/Katla%20Kavya%20Sri.docx';">
                
@@ -894,9 +893,10 @@ r   .image, .image img{
             </div>
           </div>
           <div class="featured-image">
-            <div class="image">
-                <img src="assets/images/Kavyasri.jpeg" alt="avatar">
-                " alt="avatar">
+         
+                <img src="assets/images/Kavyasri.jpeg" alt="Kavyasri">
+
+                
     
             </div>
           </div>
@@ -937,48 +937,32 @@ r   .image, .image img{
             <div class="col">
                 <div class="skills-box">
                     <div class="skills-header">
-                        <h3>Web Technologies</h3>
+                        <h3>Technical Skills</h3>
                     </div>
                     <div class="skillssub-header">
-                        <h3>Frontend</h3>
+                        <h3>Software Development</h3>
                     </div>
                     <div class="skills-list">
-                        <span>HTML</span>
-                        <span>CSS</span>
+                        <span>SQL</span>
+                        <span>Python</span>
+                        <span>R</span>
                         <span>JavaScript</span>
                     </div>
                     <br>
-                     <div class="skillssub-header">
-                        <h3>Backend</h3>
-                    </div>
-                   
-                    <div class="skills-list">
-                        <span>C++</span>
-                        <span>Python</span>
                      
-                    </div>
-                    <br>
-                    <div class="skillssub-header">
-                        <h3>Database</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span>PL/SQL</span>
-                        <span>MongoDB</span>
-                     
-                    </div>
-                  <br>
+                    
 <br>
-                    <div class="skills-header">
-                        <h3>Programming</h3>
+                    <div class="skillssub-header">
+                        <h3>Cloud Computing & Security</h3>
                     </div>
                      <div class="skillssub-header">
-                        <h3>Languages</h3>
+                        
                     </div>
                     <div class="skills-list">
-                        <span>Python</span>
-                        <span>C++</span>
-                        <span>R</span>
-                        <span>C</span>
+                        <span>Microsoft Azure</span>
+                        <span>AWS (Cloud Platforms)</span>
+                        <span>Nmap</span>
+                        <span>Nessus Essentials(Security Tools)</span>
                     </div>
 <br>
                     <div class="skillssub-header">
@@ -990,28 +974,20 @@ r   .image, .image img{
                        
                      
                     </div>
-<br>
-                   
-                   
              
-                </div>
-             
-                <div class="skills-box">
-                    <div class="skills-header">
-                        <h3>Data Science Skills</h3>
-                    </div>
-                    <div class="skillssub-header">
-                        <h3>Programming Languages</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span>Python</span>
-                       
-                        <span>R</span>
-                       
-                    </div>
+               
+                   
 <br>
+<br>
+
+
+    <div class="skills-box">
+        <div class="skills-header">
+            <h3>Data Analysis Skills</h3>
+        </div>
+        
                     <div class="skillssub-header">
-                        <h3>Data Analysis</h3>
+                        <h3>Data Analysis & Manipulation</h3>
                     </div>
                     <div class="skills-list">
                         <span>Pandas</span>
@@ -1023,6 +999,8 @@ r   .image, .image img{
                     </div>
                     <div class="skills-list">
                         <span>Tableau</span>
+                        <span>Power BI</span>
+                        <span>Google Data Studio</span>
                        
                     </div>
 <br>
@@ -1062,31 +1040,30 @@ r   .image, .image img{
             <div class="col">
                 <div class="about-info">
                  
-
 <p><b>Master of Information Systems - Saint Louis University, USA (August 2023 - Current):</b></p>
                     <br><p>
-Currently pursuing a Master's in Information Systems at Saint Louis University, USA, focusing on the intersection of technology and business. The program emphasizes advanced skills in data analysis, systems architecture, and IT strategy, equipping students to address contemporary challenges in data-driven decision-making and organizational leadership. Coursework covers key topics such as database management, cloud computing, cybersecurity, and business intelligence. Additionally, students engage in hands-on projects, internships, and a capstone experience to solve real-world problems in collaboration with industry leaders, providing valuable practical experience. Ethical considerations and leadership in technology are integral components of the program, preparing graduates to become responsible and innovative leaders in the field​.</p>
-<br>
+                        Currently pursuing my Master’s in Information Systems at Saint Louis University, where I am enhancing my expertise in data analytics, business intelligence, and software development. As part of my academic journey, I am working on an E-Learning Employability Analytics Application, analyzing student engagement data to improve career readiness programs.<p></p>
+                        <p>To bridge the gap between theory and industry applications, I am actively learning data analytics tools such as SQL, Python, Power BI, and Tableau. Additionally, I am exploring predictive analytics and machine learning models to extract insights from student learning patterns and enhance employability outcomes.<p></p>
+                        <p>My coursework, combined with hands-on research, is equipping me with a strong foundation in data-driven decision-making, software development, and problem-solving, which I aim to apply in real-world industry scenarios.<p></p>
+                        <br>
 </div>
                 </div>
-<div class="col">
+            <div class="col">
                 <div class="about-info">
 
-</div>
-                </div>
-<div class="col">
-                <div class="about-info">
-<p><b>Bachelor of Technology - Anurag University, India :</b><p><br>
-<p>I successfully completed my bachelors and gained practical experience by initiating a startup during my time in college. Securing 1st place in a college accelerator, I learned key skills in data analysis, people management, collaboration, and effective communication. This hands-on experience taught me invaluable lessons beyond the classroom, shaping my approach to real-world challenges and problem-solving.
-                        
 <p><b>Master’s of Technology - Nova College of Engineering, India :</b><p><br>
-<p>I successfully completed my masters in structural Engineering and gained practical experience by initiating a startup during my time in college. Securing 1st place in a college accelerator, I learned key skills in data analysis, people management, collaboration, and effective communication. This hands-on experience taught me invaluable lessons beyond the classroom, shaping my approach to real-world challenges and problem-solving.
+<p>During my M.Tech in Structural Engineering, I founded KVSRI ECO PROJECTS, a company focused on sustainable construction and eco-friendly engineering solutions. Through this venture, I worked on innovative techniques such as soil stabilization, waste material utilization, and pre-engineered building designs to promote environmentally responsible construction practices.<p></p>
+<p>Alongside my entrepreneurial journey, my research on Pre-Engineering Building Design using STAAD.PRO focused on optimizing structural longevity based on soil conditions. Leading KVSRI ECO PROJECTS provided me with invaluable experience in business strategy, project execution, team management, and client collaboration, bridging the gap between academia and real-world applications.<p></p>
+<br>
 
-
-
-
-
-
+</div>
+                </div>
+            <div class="col">
+                <div class="about-info">                
+<p><b>Bachelor of Technology - Anurag University, India :</b><p><br>
+<p>During my B.Tech in Civil Engineering, I worked on projects such as Soil Stabilization using Waste Plastic Material and Construction of a Multistorey Residential Project, reinforcing my foundation in sustainable construction.<p></p>
+<p>Beyond academics, I actively contributed to leadership and event management by organizing Aagama 2k16, a national-level technical fest, and the Survey Camp 2014, enhancing my teamwork, problem-solving, and project coordination skills.<p></p>
+<br>
 
                     </p>
                    </div>
@@ -1110,7 +1087,9 @@ Currently pursuing a Master's in Information Systems at Saint Louis University, 
             <div class="project-box">
                 <i class="uil uil-briefcase-alt"></i>
                 <h3>Professional</h3>
-                <label class="label1"><p>Data Visualization intern in Excelerate, Business Analyst in Leapscholar.</p></label>
+                <label class="label1"><p>Data Visualization intern in Excelerate.</p></label>
+                <label class="label1"><p>Digital Strategy intern in Excelerate.</p></label>
+                <label class="label1"><p>Quality Engineer & Assurance Associate engineer in Cognizant.</p></label>
             </div>
             <div class="project-box"
 onclick="window.location.href='https://www.linkedin.com/in/kavya-sri-katla/';">
@@ -1120,14 +1099,20 @@ onclick="window.location.href='https://www.linkedin.com/in/kavya-sri-katla/';">
             </div>
             <div class="project-box" onclick="window.location.href='https://www.linkedin.com/in/kavya-sri-katla/';">
                 <i class="uil uil-users-alt"></i>
-                <h3>Books Read</h3>
-                <label class="label1"><p>Questions are the answers, How to win friends and influence people, Business School.</p></label>
+                <h3>Social Impact and Volunteering</h3>
+                <label class="label1"><p>I am an active member of the Esteemed Students Refugee Organization, India, which is dedicated to helping individuals in need by providing support for education, living expenses, food, and amenities for government schools. Our efforts focus on assisting students who cannot afford basic educational resources and ensuring they have access to necessary facilities based on their specific requirements. Through this organization, I contribute to initiatives that make a meaningful impact on underprivileged communities, reinforcing my commitment to social responsibility and community development.</p></label>
             </div>
             <div class="project-box">
                 <i class="uil uil-award"></i>
-                <h3>Experience</h3>
-                <label class="label1"><p>10 months in QA Testing</p></label>
-            </div>
+                <h3>Academic Projects & Research</h3>
+                <label class="label1">
+                    <p>Cyber Security Systems Assessment (Jan 2024 – Mar 2024). Conducted vulnerability scans on 15 websites using Nmap and Nessus, reducing high-risk vulnerabilities by 40%.
+                    <p>Application Design (Oct 2023 – Nov 2023). Developed a shopping comparison app with 90% photo recognition accuracy, saving users 30% shopping time.
+                    <p>Enterprise Architecture & System Infrastructure (Aug 2023 – Oct 2023). Created a digital roadmap and improved process efficiency by 15% for an enterprise.
+                    <p>Pre-Engineering Buildings Design (Aug 2021 – Feb 2022). Designed buildings using Staad Pro, increasing structural life by 25% and reducing costs by 20%.
+                    <p>Soil Stabilization (Sep 2016 – Mar 2017). Stabilized soil with plastic reinforcement, improving strength by 15% and reducing construction costs by 10%.
+           
+                </div>
           </div>
        </section>
 
@@ -1242,7 +1227,7 @@ onclick="window.location.href='https://www.linkedin.com/in/kavya-sri-katla/';">
 
 /* ----- TYPING EFFECT ----- */
    var typingEffect = new Typed(".typedText",{
-      strings : ["Business Analyst","Data Visualization Intern","Marketing Analyst"],
+      strings : ["Data Analyst Associate Intern", "Digital Strategy Associate Intern", "Software Test Engineer"],
       loop : true,
       typeSpeed : 100,
       backSpeed : 80,
