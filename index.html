@@ -81,6 +81,43 @@
       box-shadow: 0 8px 12px rgba(0, 188, 212, 0.7);
     }
 
+    .skills-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skills-filters button {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.skills-filters button.active {
+  background-color: #007BFF;
+  border-color: #007BFF;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.skill-item {
+  background-color: #1e1e1e;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #444;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+
     /* Projects filter buttons */
     .projects-filters {
       margin-bottom: 1rem;
@@ -175,6 +212,7 @@
       border-top: 1px solid #333;
       font-size: 0.9rem;
     }
+  
   </style>
 
   <!-- Icons from Unicons CDN -->
@@ -211,7 +249,36 @@
       });
     });
   });
+<script>
+  const skillButtons = document.querySelectorAll('.skills-filters button');
+  const skillItems = document.querySelectorAll('.skill-item');
+
+  skillButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.skill;
+
+      // Toggle button active state
+      skillButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+        btn.tabIndex = -1;
+      });
+      button.classList.add('active');
+      button.setAttribute('aria-selected', 'true');
+      button.tabIndex = 0;
+
+      // Show/hide skill items
+      skillItems.forEach(skill => {
+        if (category === 'all' || skill.dataset.skill === category) {
+          skill.classList.remove('hidden');
+        } else {
+          skill.classList.add('hidden');
+        }
+      });
+    });
+  });
 </script>
+
 
 <body>
   <header>
@@ -295,34 +362,69 @@
     </section>
 
     <!-- Skills -->
-    <section id="skills" aria-label="Skills">
-      <h2>Skills</h2>
-      <div class="skills-list" role="list">
-        <div class="skill-card" role="listitem">Python</div>
-        <div class="skill-card" role="listitem">SQL</div>
-        <div class="skill-card" role="listitem">Power BI</div>
-        <div class="skill-card" role="listitem">DAX</div>
-        <div class="skill-card" role="listitem">Data Visualization</div>
-        <div class="skill-card" role="listitem">ETL Processes</div>
-        <div class="skill-card" role="listitem">Azure & AWS</div>
-        <div class="skill-card" role="listitem">Tableau</div>
-      </div>
-    </section>
+<section id="skills">
+  <h2>Technical Skills</h2>
+
+  <!-- Skill Category Filters -->
+  <div class="skills-filters" role="tablist" aria-label="Skill Categories">
+    <button class="active" data-skill="all" aria-selected="true" tabindex="0">All</button>
+    <button data-skill="programming" aria-selected="false" tabindex="-1">Programming & Database</button>
+    <button data-skill="visualization" aria-selected="false" tabindex="-1">Data Visualization & BI</button>
+    <button data-skill="dataengineering" aria-selected="false" tabindex="-1">Data Engineering & ETL</button>
+    <button data-skill="testing" aria-selected="false" tabindex="-1">Software Testing & Automation</button>
+    <button data-skill="cloud" aria-selected="false" tabindex="-1">Cloud & Security</button>
+    <button data-skill="tools" aria-selected="false" tabindex="-1">Tools & Platforms</button>
+  </div>
+
+  <!-- Skill Items -->
+  <div class="skills-grid">
+    <div class="skill-item" data-skill="programming">Python</div>
+    <div class="skill-item" data-skill="programming">SQL (T-SQL, Stored Procedures)</div>
+    <div class="skill-item" data-skill="programming">NoSQL</div>
+    <div class="skill-item" data-skill="programming">JavaScript (Node.js, React)</div>
+
+    <div class="skill-item" data-skill="visualization">Power BI (DAX, Filtering, Dashboard Design)</div>
+    <div class="skill-item" data-skill="visualization">Tableau</div>
+    <div class="skill-item" data-skill="visualization">Google Data Studio</div>
+
+    <div class="skill-item" data-skill="dataengineering">Data Cleaning</div>
+    <div class="skill-item" data-skill="dataengineering">Data Transformation</div>
+    <div class="skill-item" data-skill="dataengineering">ETL Processes</div>
+    <div class="skill-item" data-skill="dataengineering">Performance Optimization</div>
+
+    <div class="skill-item" data-skill="testing">Selenium</div>
+    <div class="skill-item" data-skill="testing">Manual & Automated Testing</div>
+    <div class="skill-item" data-skill="testing">Defect Tracking</div>
+
+    <div class="skill-item" data-skill="cloud">Microsoft Azure</div>
+    <div class="skill-item" data-skill="cloud">AWS</div>
+    <div class="skill-item" data-skill="cloud">DevOps (CI/CD, GitHub Actions)</div>
+    <div class="skill-item" data-skill="cloud">Cybersecurity Basics (Nmap, Nessus)</div>
+
+    <div class="skill-item" data-skill="tools">SQL Server</div>
+    <div class="skill-item" data-skill="tools">SSMS</div>
+    <div class="skill-item" data-skill="tools">Jira</div>
+    <div class="skill-item" data-skill="tools">GitHub</div>
+    <div class="skill-item" data-skill="tools">Excel</div>
+    <div class="skill-item" data-skill="tools">PowerPoint</div>
+  </div>
+</section>
+
 
     <!-- Certifications -->
-    <section id="certifications" aria-label="Certifications">
-<h2>Certifications</h2>
-<ul class="details-list">
-<li>
-<strong>Microsoft Certified: Data Analyst Associate</strong> – 2024
-</li>
-<li>
-<strong>Google Data Analytics Professional Certificate</strong> – 2023
-</li>
-<li>
-<strong>Coursera: Data Science and Machine Learning</strong> – 2023
-</li>
-</ul>
+
+</section>
+<section id="certifications" aria-label="Certifications">
+  <h2>Certifications</h2>
+  <ul class="details-list">
+    <li><strong>Power BI Essential Training</strong> — LinkedIn Learning</li>
+    <li><strong>Microsoft Azure Fundamentals</strong> — Microsoft Learn</li>
+    <li><strong>AWS Cloud Badges</strong> (Cloud Computing, Storage, Security)</li>
+    <li><strong>Selenium WebDriver with Java</strong> — Udemy</li>
+    <li><strong>SQL Certification</strong> — Frontlines EduTech</li>
+    <li><strong>React.js Certification</strong> — Frontlines EduTech</li>
+    <li><strong>AI Fundamentals</strong> — DataCamp</li>
+  </ul>
 </section>
 <!-- Projects -->
 <section id="projects" aria-label="Projects">
@@ -376,19 +478,7 @@
       </p>
     </article>
   </div>
-</section>
-<section id="certifications" aria-label="Certifications">
-  <h2>Certifications</h2>
-  <ul class="details-list">
-    <li><strong>Power BI Essential Training</strong> — LinkedIn Learning</li>
-    <li><strong>Microsoft Azure Fundamentals</strong> — Microsoft Learn</li>
-    <li><strong>AWS Cloud Badges</strong> (Cloud Computing, Storage, Security)</li>
-    <li><strong>Selenium WebDriver with Java</strong> — Udemy</li>
-    <li><strong>SQL Certification</strong> — Frontlines EduTech</li>
-    <li><strong>React.js Certification</strong> — Frontlines EduTech</li>
-    <li><strong>AI Fundamentals</strong> — DataCamp</li>
-  </ul>
-</section>
+
 
     
 <!-- Contact -->
