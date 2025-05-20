@@ -1,242 +1,199 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kavya Sri Katla – Data Analyst Portfolio</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fa; color: #333; }
+  header { background: #003366; color: white; padding: 20px; text-align: center; }
+  section { padding: 20px 40px; max-width: 900px; margin: auto; }
+  h1, h2, h3 { margin-bottom: 10px; }
+  .top-header h1 { border-bottom: 3px solid #003366; padding-bottom: 5px; }
+  .projects-container, .experience-container, .certifications-container, .skills-container {
+    display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+  }
+  .project-box, .experience-box, .certification-box {
+    background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px; width: 280px; cursor: pointer; transition: box-shadow 0.3s ease;
+  }
+  .project-box:hover, .experience-box:hover, .certification-box:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  img { max-width: 100%; border-radius: 5px; margin-bottom: 10px; }
+  p { line-height: 1.5; }
+  ul { list-style: none; padding: 0; }
+  ul li { margin-bottom: 8px; }
+  .skills-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .skill-pill {
+    background: #003366; color: white; padding: 6px 12px; border-radius: 15px; font-size: 0.9em;
+  }
+  a { color: #003366; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
 
-const Portfolio = () => {
-  return (
-    <>
-      <style>{`
-        * {
-          box-sizing: border-box;
-        }
-        body {
-          margin: 0;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background: #f4f7f8;
-          color: #222;
-          line-height: 1.6;
-        }
-        .container {
-          max-width: 900px;
-          margin: 2rem auto;
-          padding: 0 1rem;
-          background: white;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-        }
-        h1, h2, h3 {
-          color: #004aad;
-          margin-bottom: 0.5rem;
-          font-weight: 700;
-        }
-        h1 {
-          font-size: 2.8rem;
-          margin-bottom: 1rem;
-          border-bottom: 3px solid #004aad;
-          padding-bottom: 0.3rem;
-        }
-        h2 {
-          font-size: 2rem;
-          border-bottom: 2px solid #004aad;
-          padding-bottom: 0.2rem;
-          margin-top: 2rem;
-        }
-        h3 {
-          font-size: 1.4rem;
-          margin-top: 1.5rem;
-        }
-        p {
-          margin-bottom: 1rem;
-        }
-        ul {
-          padding-left: 1.25rem;
-          margin-bottom: 1rem;
-        }
-        a {
-          color: #004aad;
-          text-decoration: none;
-        }
-        a:hover {
-          text-decoration: underline;
-        }
-        .contact-info {
-          font-size: 1rem;
-          margin-bottom: 1.5rem;
-        }
-        .section {
-          margin-bottom: 2rem;
-        }
-        .job-title {
-          font-weight: 600;
-          color: #222;
-        }
-        .company {
-          font-style: italic;
-          color: #555;
-          margin-left: 0.5rem;
-        }
-        .date-range {
-          color: #777;
-          font-size: 0.9rem;
-        }
-        .skills-list {
-          columns: 2;
-          -webkit-columns: 2;
-          -moz-columns: 2;
-        }
-      `}</style>
+<header>
+  <h1>Kavya Sri Katla</h1>
+  <p>Data Analyst | M.S. Information Systems | SQL, Python, Power BI, Cloud Analytics</p>
+  <p>Email: <a href="mailto:srikatlakavya@gmail.com">srikatlakavya@gmail.com</a> | Phone: +1 425 472 9708</p>
+</header>
 
-      <div className="container" role="main">
-        <header>
-          <h1>Kavya Sri Katla</h1>
-          <div className="contact-info" aria-label="Contact information">
-            <div>Email: <a href="mailto:srikatlakavya@gmail.com">srikatlakavya@gmail.com</a></div>
-            <div>Phone: <a href="tel:+14254729708">+1 425-472-9708</a></div>
-            <div>LinkedIn: <a href="https://www.linkedin.com/in/kavya-sri-katla/" target="_blank" rel="noopener noreferrer">linkedin.com/in/kavya-sri-katla/</a></div>
-          </div>
-        </header>
+<section id="about-me">
+  <div class="top-header">
+    <h1>About Me</h1>
+  </div>
+  <p>
+    I am a goal-oriented Data Analyst currently pursuing an M.S. in Information Systems at Saint Louis University, with over 5 years of combined experience in data engineering, analytics, and digital strategy implementation across banking, technology, and education sectors. 
+  </p>
+  <p>
+    Skilled in SQL, Python, Power BI, and cloud platforms including Azure and AWS, I specialize in ETL processes, dashboard development, and predictive modeling to convert complex data into actionable business intelligence that supports operational and strategic decision-making.
+  </p>
+</section>
 
-        <section className="section" aria-labelledby="professional-summary">
-          <h2 id="professional-summary">Professional Summary</h2>
-          <p>
-            A goal-oriented Data Analyst who obtained a Master of Science in Information Systems from Saint Louis University (May 2025), with 5+ years of combined experience in data engineering, analytics, and digital strategy across banking, technology, and education sectors. Proficient in SQL, Python, Power BI, and cloud platforms (Azure, AWS), with strong skills in ETL processes, dashboard development, and predictive modeling. Passionate about transforming complex data into actionable business intelligence to support strategic decision-making and innovative problem-solving.
-          </p>
-        </section>
+<section id="skills">
+  <div class="top-header">
+    <h1>Technical Skills</h1>
+  </div>
+  <div class="skills-list">
+    <span class="skill-pill">Python</span>
+    <span class="skill-pill">SQL (T-SQL, Stored Procedures)</span>
+    <span class="skill-pill">NoSQL</span>
+    <span class="skill-pill">JavaScript (Node.js, React)</span>
+    <span class="skill-pill">Power BI (DAX, Advanced Filtering)</span>
+    <span class="skill-pill">Tableau</span>
+    <span class="skill-pill">Google Data Studio</span>
+    <span class="skill-pill">ETL & Data Cleaning</span>
+    <span class="skill-pill">Azure Data Factory</span>
+    <span class="skill-pill">AWS Cloud Services</span>
+    <span class="skill-pill">DevOps (CI/CD, GitHub Actions)</span>
+    <span class="skill-pill">Cybersecurity Tools (Nmap, Nessus)</span>
+    <span class="skill-pill">Selenium Testing</span>
+    <span class="skill-pill">SQL Server, SSMS</span>
+    <span class="skill-pill">Jira, GitHub</span>
+    <span class="skill-pill">Excel, PowerPoint</span>
+  </div>
+</section>
 
-        <section className="section" aria-labelledby="education">
-          <h2 id="education">Education</h2>
-          <h3>Saint Louis University, St. Louis, MO</h3>
-          <p><strong>Master of Science in Information Systems</strong> | GPA: 3.86/4.0 | Aug 2023 – May 2025</p>
-        </section>
+<section id="projects">
+  <div class="top-header">
+    <h1>Projects</h1>
+  </div>
+  <div class="projects-container">
 
-        <section className="section" aria-labelledby="work-experience">
-          <h2 id="work-experience">Work Experience</h2>
+    <div class="project-box" onclick="window.open('https://github.com/katlakavyasri/Kavya-Sri-Katla/blob/main/E-Learning%20Employability%20Analytics%20Application.pbix', '_blank');">
+      <img src="assets/images/Employability-Analytics-Dashboard.png" alt="E-Learning Employability Analytics Application" />
+      <h3>E-Learning Employability Analytics Application</h3>
+      <p>Led research, data collection, and methodology design to analyze Skillsoft Percipio platform data and surveys. Applied statistical analysis and Power BI visualization techniques to generate actionable insights for curriculum improvement and student career readiness.</p>
+      <p><b>Technologies:</b> Power BI, SQL, Python, Statistical Analysis</p>
+      <p><b>Timeline:</b> Jan 2025 – May 2025</p>
+    </div>
 
-          <article aria-label="Data Analyst Associate Intern">
-            <h3 className="job-title">Data Analyst Associate Intern
-              <span className="company">| Excelerate Global Internship Program</span>
-            </h3>
-            <div className="date-range">May 2024 – July 2024</div>
-            <ul>
-              <li>Extracted, cleaned, and analyzed large datasets using SQL and Python, ensuring high data accuracy.</li>
-              <li>Developed interactive dashboards and data visualizations using Google Data Studio, Power BI, and Tableau.</li>
-              <li>Identified key business trends and KPIs to provide actionable insights for process improvements.</li>
-              <li>Applied ETL processes to prepare datasets for business analytics.</li>
-            </ul>
-          </article>
+    <div class="project-box" onclick="window.open('https://github.com/katlakavyasri/Cybersecurity-Systems-Assessment', '_blank');">
+      <img src="assets/images/Cybersecurity-Assessment.png" alt="Cybersecurity Systems Assessment" />
+      <h3>Cybersecurity Systems Assessment & Vulnerability Analysis</h3>
+      <p>Conducted penetration testing and vulnerability scanning using Nmap (Zenmap) and Nessus Essentials. Identified security risks and provided mitigation strategies to strengthen cybersecurity defenses.</p>
+      <p><b>Technologies:</b> Nmap, Nessus, Vulnerability Scanning, Risk Analysis</p>
+      <p><b>Timeline:</b> Jan 2024 – Mar 2024</p>
+    </div>
 
-          <article aria-label="Digital Strategy Associate Intern">
-            <h3 className="job-title">Digital Strategy Associate Intern
-              <span className="company">| Excelerate Global Internship Program</span>
-            </h3>
-            <div className="date-range">Jan 2024 – Feb 2024</div>
-            <ul>
-              <li>Conducted market research and asset evaluation to enhance business strategies.</li>
-              <li>Applied the RACE (Reach, Act, Convert, Engage) digital marketing analytics framework.</li>
-              <li>Optimized social media and email campaigns using data-driven insights.</li>
-            </ul>
-          </article>
+    <div class="project-box" onclick="window.open('https://github.com/katlakavyasri/Housing-Economic-Insights', '_blank');">
+      <img src="assets/images/Housing-Economic-Insights.png" alt="Housing and Economic Insights" />
+      <h3>Housing and Economic Insights: Data Visualization</h3>
+      <p>Developed interactive dashboards in Power BI visualizing housing and economic trends using U.S. Census Bureau data. Applied data cleaning, transformation, and DAX calculations to provide dynamic, user-friendly reports for decision-making.</p>
+      <p><b>Technologies:</b> Power BI, DAX, Data Cleaning, Data Modeling</p>
+      <p><b>Timeline:</b> Jan 2025 – Mar 2025</p>
+    </div>
 
-          <article aria-label="Data Engineer at Cognizant Technology Solutions">
-            <h3 className="job-title">Data Engineer
-              <span className="company">| Cognizant Technology Solutions, Hyderabad, India</span>
-            </h3>
-            <div className="date-range">May 2022 – Mar 2023</div>
-            <ul>
-              <li>Designed and optimized banking ETL pipelines using Azure Data Factory and SQL Server for real-time lending and risk analytics.</li>
-              <li>Developed SQL-based financial models automating loan performance and credit risk assessment, improving forecasting accuracy by 20%.</li>
-              <li>Built Python anomaly detection models, enhancing compliance and audit readiness by 30%.</li>
-              <li>Implemented data standardization frameworks reducing reporting discrepancies by 25%.</li>
-              <li>Created Power BI dashboards to monitor loan trends and customer risks, improving decision-making speed by 25%.</li>
-              <li>Leveraged Azure Synapse Analytics and Databricks to improve data pipeline efficiency by 40%.</li>
-              <li>Ensured compliance with data governance and financial reporting standards.</li>
-            </ul>
-          </article>
+  </div>
+</section>
 
-          <article aria-label="Data Engineer at Quadient Technologies">
-            <h3 className="job-title">Data Engineer
-              <span className="company">| Quadient Technologies Pvt Ltd, Bengaluru, Karnataka</span>
-            </h3>
-            <div className="date-range">Mar 2018 – May 2022</div>
-            <ul>
-              <li>Designed and optimized ETL workflows integrating multi-source data for real-time analytics across 10+ business units.</li>
-              <li>Developed SQL-based financial reporting models improving forecasting accuracy by 15%.</li>
-              <li>Built predictive Python models optimizing infrastructure and reducing operational costs by $500K annually.</li>
-              <li>Implemented master data governance frameworks reducing data discrepancies by 20%.</li>
-              <li>Created Power BI dashboards for tracking KPIs and operational metrics, improving executive decision-making speed by 30%.</li>
-              <li>Led automation of data reconciliation reducing manual workload by 40% and improving reporting accuracy.</li>
-            </ul>
-          </article>
-        </section>
+<section id="experience">
+  <div class="top-header">
+    <h1>Work Experience</h1>
+  </div>
+  <div class="experience-container">
 
-        <section className="section" aria-labelledby="technical-skills">
-          <h2 id="technical-skills">Technical Skills</h2>
-          <ul className="skills-list" aria-label="Technical skills list">
-            <li>Python</li>
-            <li>SQL (T-SQL, Stored Procedures)</li>
-            <li>NoSQL</li>
-            <li>JavaScript (Node.js, React)</li>
-            <li>Power BI (DAX, Advanced Filtering, Dashboard Design)</li>
-            <li>Tableau</li>
-            <li>Google Data Studio</li>
-            <li>Data Cleaning, Transformation, ETL Processes</li>
-            <li>Selenium, Manual & Automated Testing</li>
-            <li>Microsoft Azure</li>
-            <li>Amazon Web Services (AWS)</li>
-            <li>DevOps (CI/CD, GitHub Actions)</li>
-            <li>Cybersecurity Basics (Nmap, Nessus)</li>
-            <li>SQL Server, SSMS</li>
-            <li>Jira, GitHub</li>
-            <li>Excel, PowerPoint</li>
-          </ul>
-        </section>
+    <div class="experience-box">
+      <h3>Data Analyst Associate Intern</h3>
+      <h4>Excelerate Global Internship Program | May 2024 – July 2024</h4>
+      <ul>
+        <li>Extracted, cleaned, and analyzed large datasets using SQL and Python, ensuring data accuracy.</li>
+        <li>Developed interactive dashboards and visualizations with Power BI, Tableau, and Google Data Studio.</li>
+        <li>Identified key business trends, KPIs, and process inefficiencies to provide actionable insights.</li>
+        <li>Applied ETL processes to prepare datasets for business analytics.</li>
+      </ul>
+    </div>
 
-        <section className="section" aria-labelledby="certifications">
-          <h2 id="certifications">Certifications</h2>
-          <ul>
-            <li>Power BI Essential Training – LinkedIn Learning</li>
-            <li>Microsoft Azure Fundamentals – Microsoft Learn</li>
-            <li>AWS Cloud Badges – Cloud Computing, Storage, Security</li>
-            <li>Selenium WebDriver with Java – Udemy</li>
-            <li>SQL Certification – Frontline EduTech</li>
-            <li>AI Fundamentals – DataCamp</li>
-          </ul>
-        </section>
+    <div class="experience-box">
+      <h3>Digital Strategy Associate Intern</h3>
+      <h4>Excelerate Global Internship Program | Jan 2024 – Feb 2024</h4>
+      <ul>
+        <li>Conducted market research and asset evaluation to enhance business strategies.</li>
+        <li>Applied the RACE Strategy Framework for digital marketing analytics.</li>
+        <li>Optimized social media and email campaigns using data-driven insights.</li>
+      </ul>
+    </div>
 
-        <section className="section" aria-labelledby="project-experience">
-          <h2 id="project-experience">Project Experience</h2>
+    <div class="experience-box">
+      <h3>Data Engineer</h3>
+      <h4>Cognizant Technology Solutions, Hyderabad, India | May 2022 – Mar 2023</h4>
+      <ul>
+        <li>Designed and optimized banking ETL pipelines using Azure Data Factory and SQL Server, integrating structured/unstructured data across regions.</li>
+        <li>Developed SQL-driven financial models improving forecasting accuracy by 20%.</li>
+        <li>Built Python anomaly detection models enhancing audit readiness by 30%.</li>
+        <li>Deployed Power BI dashboards to enable strategic decision-making.</li>
+        <li>Improved query performance by 40% leveraging Azure Synapse Analytics and Databricks.</li>
+      </ul>
+    </div>
 
-          <article aria-label="E-Learning Employability Analytics Application">
-            <h3>E-Learning Employability Analytics Application</h3>
-            <p><em>Saint Louis University | Jan 2025 – May 2025</em></p>
-            <ul>
-              <li>Led research, data collection, methodology design, feasibility assessment, and implementation.</li>
-              <li>Applied statistical analysis and visualization techniques on Skillsoft Percipio datasets and surveys.</li>
-              <li>Developed interactive dashboards in Power BI to generate actionable insights for curriculum and career readiness.</li>
-            </ul>
-          </article>
+    <div class="experience-box">
+      <h3>Data Engineer</h3>
+      <h4>Quadient Technologies Pvt Ltd, Bengaluru, Karnataka | Mar 2018 – May 2022</h4>
+      <ul>
+        <li>Designed and optimized ETL workflows integrating multi-source data for real-time analytics.</li>
+        <li>Developed SQL-based financial reporting models improving forecasting accuracy by 15%.</li>
+        <li>Built Python predictive models reducing operational costs by $500K annually.</li>
+        <li>Implemented master data governance framework reducing discrepancies by 20%.</li>
+        <li>Automated data reconciliation reducing manual workload by 40%.</li>
+      </ul>
+    </div>
 
-          <article aria-label="Cybersecurity Systems Assessment & Vulnerability Analysis">
-            <h3>Cybersecurity Systems Assessment & Vulnerability Analysis</h3>
-            <p><em>Saint Louis University | Jan 2024 – Mar 2024</em></p>
-            <ul>
-              <li>Conducted penetration testing and vulnerability scans using Nmap (Zenmap) and Nessus Essentials.</li>
-              <li>Identified security risks and recommended mitigation strategies to improve defenses.</li>
-            </ul>
-          </article>
+  </div>
+</section>
 
-          <article aria-label="Housing and Economic Insights Data Visualization Project">
-            <h3>Housing and Economic Insights: Data Visualization with U.S. Census Bureau Data</h3>
-            <p><em>Saint Louis University | Jan 2025 – Mar 2025</em></p>
-            <ul>
-              <li>Developed Power BI dashboards to visualize housing and economic trends using Census Bureau data.</li>
-              <li>Performed data cleaning, transformation, modeling, and DAX calculations for in-depth analysis.</li>
-              <li>Designed dynamic reports with filters and slicers to enhance decision-making experience.</li>
-            </ul>
-          </article>
-        </section>
+<section id="certifications">
+  <div class="top-header">
+    <h1>Certifications</h1>
+  </div>
+  <div class="certifications-container">
+    <div class="certification-box">
+      <h4>Power BI Essential Training</h4>
+      <p>LinkedIn Learning</p>
+    </div>
+    <div class="certification-box">
+      <h4>Microsoft Azure Fundamentals</h4>
+      <p>Microsoft Learn</p>
+    </div>
+    <div class="certification-box">
+      <h4>AWS Cloud Badges</h4>
+      <p>Cloud Computing, Storage, Security</p>
+    </div>
+    <div class="certification-box">
+      <h4>Selenium WebDriver with Java</h4>
+      <p>Udemy</p>
+    </div>
+    <div class="certification-box">
+      <h4>SQL Certification</h4>
+      <p>Frontlines EduTech</p>
+    </div>
+    <div class="certification-box">
+      <h4>AI Fundamentals</h4>
+      <p>DataCamp</p>
+    </div>
+  </div>
+</section>
 
-      </div>
-    </>
-  );
-};
-
-export default Portfolio;
+</body>
+</html>
