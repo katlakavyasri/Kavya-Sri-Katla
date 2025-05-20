@@ -229,6 +229,26 @@
       outline: none;
     }
 
+    .experience-company-filters, .experience-time-filters {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.filter-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+
     /* Footer */
     footer {
       text-align: center;
@@ -268,58 +288,77 @@
     </section>
 
     <!-- Work Experience -->
-    <section id="experience" aria-label="Work experience">
-      <h2>Work Experience</h2>
-      <div class="grid-2">
-        <div>
-          <h3>Data Analyst Associate Intern</h3>
-          <p><em>Excelerate Global Internship Program | May 2024 – July 2024</em></p>
-          <ul>
-            <li>Extracted, cleaned, and analyzed large datasets using SQL and Python, ensuring high data accuracy.</li>
+  <section id="experience" aria-label="Work experience">
+  <h2>Work Experience</h2>
+
+  <!-- Filter by Company -->
+  <div class="experience-company-filters" role="tablist" aria-label="Filter by company">
+    <button class="filter-btn active" data-company="all">All Companies</button>
+    <button class="filter-btn" data-company="excelerate">Excelerate Global</button>
+    <button class="filter-btn" data-company="cognizant">Cognizant</button>
+    <button class="filter-btn" data-company="quadient">Quadient</button>
+  </div>
+
+  <!-- Filter by Time Period -->
+  <div class="experience-time-filters" role="tablist" aria-label="Filter by time period">
+    <button class="filter-btn active" data-period="all">All Time Periods</button>
+    <button class="filter-btn" data-period="2024">2024</button>
+    <button class="filter-btn" data-period="2022-2023">2022–2023</button>
+    <button class="filter-btn" data-period="2018-2022">2018–2022</button>
+  </div>
+
+  <!-- Experience Items -->
+  <div class="grid-2" id="experience-list">
+    <div class="experience-item" data-company="excelerate" data-period="2024">
+      <h3>Data Analyst Associate Intern</h3>
+      <p><em>Excelerate Global | May 2024 – July 2024</em></p>
+      <ul>
+        <li>Extracted, cleaned, and analyzed large datasets using SQL and Python, ensuring high data accuracy.</li>
             <li>Developed interactive dashboards and data visualizations using Google Data Studio, Power BI, and Tableau.</li>
             <li>Identified key business trends, KPIs, and process inefficiencies, providing actionable insights.</li>
             <li>Applied ETL processes to prepare datasets for business analytics.</li>
-          </ul>
-        </div>
+      </ul>
+    </div>
 
-        <div>
-          <h3>Digital Strategy Associate Intern</h3>
-          <p><em>Excelerate Global Internship Program | Jan 2024 – Feb 2024</em></p>
-          <ul>
-            <li>Conducted market research and asset evaluation to enhance business strategies.</li>
+    <div class="experience-item" data-company="excelerate" data-period="2024">
+      <h3>Digital Strategy Associate Intern</h3>
+      <p><em>Excelerate Global | Jan 2024 – Feb 2024</em></p>
+      <ul>
+        <li>Conducted market research and asset evaluation to enhance business strategies.</li>
             <li>Applied the RACE Strategy Framework for digital marketing analytics.</li>
             <li>Optimized social media engagement, email campaigns, and customer targeting using data-driven insights.</li>
-          </ul>
-        </div>
+      </ul>
+    </div>
 
-        <div>
-          <h3>Data Engineer</h3>
-          <p><em>Cognizant Technology Solutions, Hyderabad, India | May 2022 – Mar 2023</em></p>
-          <ul>
-            <li>Designed and optimized banking ETL pipelines using Azure Data Factory and SQL Server, integrating structured and unstructured financial data across multiple regions.</li>
+    <div class="experience-item" data-company="cognizant" data-period="2022-2023">
+      <h3>Data Engineer</h3>
+      <p><em>Cognizant | May 2022 – Mar 2023</em></p>
+      <ul>
+        <li>Designed and optimized banking ETL pipelines using Azure Data Factory and SQL Server, integrating structured and unstructured financial data across multiple regions.</li>
             <li>Developed SQL-driven financial models, automating loan performance tracking, credit risk assessment, and profitability analysis.</li>
             <li>Built Python-based anomaly detection models, identifying discrepancies in loan disbursement, repayments, and customer transactions.</li>
             <li>Implemented data standardization frameworks reducing reporting discrepancies by 25%.</li>
             <li>Designed and deployed Power BI dashboards improving strategic decision-making speed by 25%.</li>
             <li>Leveraged Azure Synapse Analytics and Databricks for large-scale data processing, reducing data pipeline execution time by 40%.</li>
             <li>Ensured compliance with banking data governance and financial reporting standards.</li>
-          </ul>
-        </div>
+      </ul>
+    </div>
 
-        <div>
-          <h3>Data Engineer</h3>
-          <p><em>Quadient Technologies Pvt Ltd, Bengaluru, Karnataka | Mar 2018 – May 2022</em></p>
-          <ul>
-            <li>Designed and optimized ETL workflows integrating structured and unstructured data from multiple sources.</li>
+    <div class="experience-item" data-company="quadient" data-period="2018-2022">
+      <h3>Data Engineer</h3>
+      <p><em>Quadient | Mar 2018 – May 2022</em></p>
+      <ul>
+        <li>Designed and optimized ETL workflows integrating structured and unstructured data from multiple sources.</li>
             <li>Developed SQL-based financial reporting models automating cost analysis and profitability tracking.</li>
             <li>Built predictive models in Python analyzing infrastructure performance, optimizing server allocations.</li>
             <li>Implemented master data governance framework reducing data discrepancies by 20%.</li>
             <li>Designed and deployed Power BI dashboards improving executive decision-making speed by 30%.</li>
             <li>Led automation of data reconciliation reducing manual workload by 40% and improving reporting accuracy.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- Projects with filtering -->
 <section id="projects" aria-label="Projects">
   <h2>Projects</h2>
@@ -368,28 +407,66 @@
 </section>
 
 
-    <!-- Skills with filtering -->
-    <section id="skills" aria-label="Skills">
-      <h2>Skills</h2>
+<!-- Skills Section -->
+<section id="skills" aria-label="Skills">
+  <h2>Skills</h2>
 
-      <div class="skills-filters" role="tablist" aria-label="Filter skills by category">
-        <button class="filter-btn active" aria-selected="true" data-filter="all" role="tab" tabindex="0">All</button>
-        <button class="filter-btn" aria-selected="false" data-filter="technical" role="tab" tabindex="-1">Technical</button>
-        <button class="filter-btn" aria-selected="false" data-filter="soft" role="tab" tabindex="-1">Soft</button>
-      </div>
+  <div class="skills-filters" role="tablist" aria-label="Filter skills by category">
+    <button class="filter-btn active" aria-selected="true" data-filter="all" role="tab" tabindex="0">All</button>
+    <button class="filter-btn" aria-selected="false" data-filter="programming" role="tab" tabindex="-1">Programming & Database</button>
+    <button class="filter-btn" aria-selected="false" data-filter="visualization" role="tab" tabindex="-1">Data Visualization & BI</button>
+    <button class="filter-btn" aria-selected="false" data-filter="etl" role="tab" tabindex="-1">Data Engineering & ETL</button>
+    <button class="filter-btn" aria-selected="false" data-filter="testing" role="tab" tabindex="-1">Software Testing & Automation</button>
+    <button class="filter-btn" aria-selected="false" data-filter="cloud" role="tab" tabindex="-1">Cloud & Security</button>
+    <button class="filter-btn" aria-selected="false" data-filter="tools" role="tab" tabindex="-1">Tools & Platforms</button>
+    <button class="filter-btn" aria-selected="false" data-filter="soft" role="tab" tabindex="-1">Soft</button>
+  </div>
 
-      <div class="skills-grid" id="skills-list">
-        <div class="skill-item" data-category="technical">SQL</div>
-        <div class="skill-item" data-category="technical">Power BI</div>
-        <div class="skill-item" data-category="technical">Python</div>
-        <div class="skill-item" data-category="technical">Azure Cloud</div>
-        <div class="skill-item" data-category="technical">ETL Processes</div>
-        <div class="skill-item" data-category="soft">Communication</div>
-        <div class="skill-item" data-category="soft">Collaboration</div>
-        <div class="skill-item" data-category="soft">Problem-solving</div>
-        <div class="skill-item" data-category="soft">Time Management</div>
-      </div>
-    </section>
+  <div class="skills-grid" id="skills-list">
+    <!-- Programming & Database -->
+    <div class="skill-item" data-category="programming">Python</div>
+    <div class="skill-item" data-category="programming">SQL (T-SQL, stored procedures)</div>
+    <div class="skill-item" data-category="programming">NoSQL</div>
+    <div class="skill-item" data-category="programming">JavaScript (Node.js, React)</div>
+
+    <!-- Data Visualization & BI -->
+    <div class="skill-item" data-category="visualization">Power BI (DAX, Dashboard Design)</div>
+    <div class="skill-item" data-category="visualization">Tableau</div>
+    <div class="skill-item" data-category="visualization">Google Data Studio</div>
+
+    <!-- Data Engineering & ETL -->
+    <div class="skill-item" data-category="etl">Data Cleaning</div>
+    <div class="skill-item" data-category="etl">Transformation</div>
+    <div class="skill-item" data-category="etl">ETL Processes</div>
+    <div class="skill-item" data-category="etl">Performance Optimization</div>
+
+    <!-- Software Testing & Automation -->
+    <div class="skill-item" data-category="testing">Selenium</div>
+    <div class="skill-item" data-category="testing">Manual & Automated Testing</div>
+    <div class="skill-item" data-category="testing">Defect Tracking</div>
+
+    <!-- Cloud & Security -->
+    <div class="skill-item" data-category="cloud">Microsoft Azure</div>
+    <div class="skill-item" data-category="cloud">Amazon Web Services (AWS)</div>
+    <div class="skill-item" data-category="cloud">DevOps (CI/CD, GitHub Actions)</div>
+    <div class="skill-item" data-category="cloud">Cybersecurity Basics (Nmap, Nessus)</div>
+
+    <!-- Tools & Platforms -->
+    <div class="skill-item" data-category="tools">SQL Server</div>
+    <div class="skill-item" data-category="tools">SSMS</div>
+    <div class="skill-item" data-category="tools">Jira</div>
+    <div class="skill-item" data-category="tools">GitHub</div>
+    <div class="skill-item" data-category="tools">Excel</div>
+    <div class="skill-item" data-category="tools">PowerPoint</div>
+
+    <!-- Soft Skills -->
+    <div class="skill-item" data-category="soft">Communication</div>
+    <div class="skill-item" data-category="soft">Collaboration</div>
+    <div class="skill-item" data-category="soft">Problem-solving</div>
+    <div class="skill-item" data-category="soft">Time Management</div>
+  </div>
+</section>
+
 
     <section class="section" id="certifications">
       <div class="top-header">
@@ -412,7 +489,7 @@
       <p>Email: <a href="mailto:srikatlakavya@gmail.com">srikatlakavya@gmail.com</a></p>
       <p>Phone: <a href="tel:+14254729708">+1 425-472-9708</a></p>
       <div class="social-icons">
-        <a href="https://linkedin.com/in/kavyasrikatla" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="icon uil uil-linkedin-alt"></a>
+        <a href="https://www.linkedin.com/in/kavya-sri-katla/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="icon uil uil-linkedin-alt"></a>
         <a href="https://github.com/kavyasrikatla" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="icon uil uil-github-alt"></a>
       </div>
     </section>
@@ -421,6 +498,43 @@
   <footer>
     <p>© 2025 Kavya Sri Katla. All rights reserved.</p>
   </footer>
+
+  <script>
+  const companyButtons = document.querySelectorAll('.experience-company-filters .filter-btn');
+  const timeButtons = document.querySelectorAll('.experience-time-filters .filter-btn');
+  const experienceItems = document.querySelectorAll('.experience-item');
+
+  let selectedCompany = 'all';
+  let selectedPeriod = 'all';
+
+  function updateExperienceFilter() {
+    experienceItems.forEach(item => {
+      const matchesCompany = (selectedCompany === 'all' || item.dataset.company === selectedCompany);
+      const matchesPeriod = (selectedPeriod === 'all' || item.dataset.period === selectedPeriod);
+
+      item.style.display = (matchesCompany && matchesPeriod) ? 'block' : 'none';
+    });
+  }
+
+  companyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      companyButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      selectedCompany = button.dataset.company;
+      updateExperienceFilter();
+    });
+  });
+
+  timeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      timeButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      selectedPeriod = button.dataset.period;
+      updateExperienceFilter();
+    });
+  });
+</script>
+
 
   <script>
     // Project filtering
