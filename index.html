@@ -7,8 +7,12 @@
 
   <!-- Google Fonts (optional) -->
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
-
   <style>
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  </style>
     /* General typography and spacing */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -520,34 +524,56 @@
 </footer>
 
 <script>
-  // Project filter buttons functionality
-  const filterButtons = document.querySelectorAll('.projects-filters button');
-  const projectItems = document.querySelectorAll('.project-item');
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.projects-filters button');
+    const projects = document.querySelectorAll('.project-item');
 
-  filterButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-      // Remove active and aria-selected from all buttons
-      filterButtons.forEach((btn) => {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-selected', 'false');
-        btn.setAttribute('tabindex', '-1');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.dataset.filter;
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+          btn.tabIndex = -1;
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        button.tabIndex = 0;
+
+        projects.forEach(project => {
+          if (category === 'all' || project.dataset.category === category) {
+            project.classList.remove('hidden');
+          } else {
+            project.classList.add('hidden');
+          }
+        });
       });
+    });
 
-      // Add active to clicked button
-      button.classList.add('active');
-      button.setAttribute('aria-selected', 'true');
-      button.setAttribute('tabindex', '0');
-      button.focus();
+    const skillButtons = document.querySelectorAll('.skills-filters button');
+    const skillItems = document.querySelectorAll('.skill-item');
 
-      const filter = button.getAttribute('data-filter');
+    skillButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.dataset.skill;
 
-      // Show/hide projects with fade effect
-      projectItems.forEach(item => {
-        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
+        skillButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+          btn.tabIndex = -1;
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        button.tabIndex = 0;
+
+        skillItems.forEach(skill => {
+          if (category === 'all' || skill.dataset.skill === category) {
+            skill.classList.remove('hidden');
+          } else {
+            skill.classList.add('hidden');
+          }
+        });
       });
     });
   });
