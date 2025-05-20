@@ -2,296 +2,437 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Portfolio | Kavya Sri Katla </title>
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kavya Sri Katla - Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    /* RESET */
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      scroll-behavior: smooth;
+      box-sizing: border-box;
     }
-    h1, h2, h3 {
-      font-weight: 700;
-    }
-    p, li {
-      font-size: 1.1rem;
+    body {
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
+      background: #f5f7fa;
+      color: #333;
     }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul {
+      list-style-type: none;
+    }
+
+    /* NAVBAR */
     nav {
-      background-color: rgba(0,0,0,0.85);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #673ab7;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    .nav-logo .nav-name {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #00c9ff;
-    }
-    .nav-menu ul {
+    nav ul {
       display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-    .nav-link {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      padding: 0.5rem;
-      transition: color 0.3s, transform 0.3s;
-    }
-    .nav-link:hover, .active-link {
-      color: #FFD700;
-      transform: scale(1.1);
-      background-color: rgba(255,255,255,0.1);
-      border-radius: 5px;
-    }
-    .btn {
-      background: #FFD700;
-      border: none;
-      padding: 10px 20px;
-      color: #000;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #FFD700;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .btn:hover {
-      background: #FFC300;
-      transform: scale(1.05);
-    }
-    .featured-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 90vh;
-      padding: 5rem 2rem;
+      gap: 2rem;
+    }
+    nav ul li a.nav-link {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #ddd;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: inline-block;
+    }
+    nav ul li a.nav-link:hover,
+    nav ul li a.nav-link.active {
+      background-color: #9575cd;
+      color: #fff;
+    }
+
+    /* HERO SECTION */
+    #home {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #7e57c2, #b39ddb);
+      color: #fff;
       text-align: center;
-      animation: fadeIn 2s ease-in;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
+    .hero-text {
+      flex: 1 1 350px;
+      max-width: 600px;
     }
-    .featured-name {
+    .hero-text h1 {
       font-size: 3rem;
-      font-weight: 700;
-      color: #FFD700;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
     }
     .typedText {
-      color: #00c9ff;
-      font-size: 2rem;
-      font-weight: 600;
+      font-weight: 700;
+      color: #ffe082;
     }
-    .section {
-      padding: 4rem 2rem;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.02);
-      border-radius: 20px;
-      margin: 2rem auto;
-      width: 90%;
-      max-width: 1200px;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-    }
-    .top-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #00c9ff;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-      text-align: left;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    li {
-      margin: 1rem 0;
-      padding-left: 1.2rem;
-      position: relative;
-    }
-    }
-    footer {
-      background-color: #111;
-      color: #999;
-      text-align: center;
-      padding: 2rem;
-      font-size: 1rem;
-    }
-    .icon {
-      display: inline-block;
-      margin: 0 10px;
-      font-size: 1.8rem;
-      cursor: pointer;
-      transition: color 0.3s, transform 0.3s;
-    }
-    .icon:hover {
-      color: #FFD700;
-      transform: scale(1.3);
-    }
-    .featured-image img {
-      width: 220px;
+    .hero-image {
+      flex: 1 1 300px;
+      max-width: 350px;
       border-radius: 50%;
-      border: 4px solid #FFD700;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
-      margin-top: 2rem;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .hero-image img {
+      width: 100%;
+      display: block;
+    }
+    .hero-image:hover {
+      transform: scale(1.05);
+    }
+
+    /* SECTIONS COMMON STYLES */
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    section h2 {
+      font-size: 2.2rem;
+      color: #5e35b1;
+      margin-bottom: 1.2rem;
+      border-bottom: 3px solid #9575cd;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    .details-list li {
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* TWO COLUMN GRID */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    /* PROJECT FILTER BUTTONS */
+    .projects-filters {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .projects-filters button {
+      background: #d1c4e9;
+      border: none;
+      padding: 0.6rem 1.3rem;
+      margin: 0 0.4rem;
+      font-weight: 600;
+      border-radius: 20px;
+      cursor: pointer;
+      color: #5e35b1;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 3px 8px rgba(94,53,177,0.2);
+    }
+    .projects-filters button.active,
+    .projects-filters button:hover {
+      background: #5e35b1;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(94,53,177,0.5);
+    }
+
+    /* PROJECT ITEMS */
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .project-item {
+      background: #ede7f6;
+      padding: 1.2rem 1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(94,53,177,0.1);
+      cursor: default;
+      user-select: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(94,53,177,0.25);
+      background: #d1c4e9;
+    }
+
+    /* SKILLS */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .skill-card {
+      background: #9575cd;
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 25px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(149,117,205,0.5);
+      transition: background-color 0.3s ease;
+      cursor: default;
+      user-select: none;
+    }
+    .skill-card:hover {
+      background: #5e35b1;
+    }
+
+    /* SOCIAL ICONS */
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+    .social-icons a.icon {
+      color: #673ab7;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+    }
+    .social-icons a.icon:hover {
+      color: #311b92;
+    }
+
+    /* CONTACT LINKS */
+    #contact p a {
+      color: #5e35b1;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    #contact p a:hover {
+      color: #311b92;
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: #5e35b1;
+      color: white;
+      font-weight: 600;
+      margin-top: 3rem;
+    }
+
+    /* RESPONSIVE ADJUSTMENTS */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      #home {
+        flex-direction: column;
+      }
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
-  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
 <body>
-  <nav id="header">
-    <div class="nav-logo">
-      <p class="nav-name">Kavya Sri Katla</p>
-    </div>
-    <div class="nav-menu">
-      <ul>
-        <li><a href="#home" class="nav-link active-link">🏠 Home</a></li>
-        <li><a href="#about" class="nav-link">👩‍💻 About</a></li>
-        <li><a href="#education" class="nav-link">🎓 Education</a></li>
-        <li><a href="#experience" class="nav-link">💼 Experience</a></li>
-        <li><a href="#projects" class="nav-link">🛠️ Projects</a></li>
-        <li><a href="#skills" class="nav-link">💡 Skills</a></li>
-        <li><a href="#certifications" class="nav-link">📜 Certifications</a></li>
-        <li><a href="#contact" class="nav-link">📬 Contact</a></li>
-      </ul>
-    </div>
+
+  <nav>
+    <ul>
+      <li><a href="#education" class="nav-link">🎓 Education</a></li>
+      <li><a href="#experience" class="nav-link">💼 Experience</a></li>
+      <li><a href="#projects" class="nav-link">📂 Projects</a></li>
+      <li><a href="#skills" class="nav-link">🛠 Skills</a></li>
+      <li><a href="#certifications" class="nav-link">📜 Certifications</a></li>
+      <li><a href="#contact" class="nav-link">📞 Contact</a></li>
+    </ul>
   </nav>
 
-  <main>
-    <section class="featured-box" id="home">
-      <div class="featured-name">
-        Hi, I'm <span class="typedText"></span>
-      </div>
-      <p> Data Analyst | SQL & Python Expert | Power BI Developer | Cloud Enthusiast 🌟</p>
-      <div class="social_icons">
-        <span class="icon" onclick="window.location.href='https://www.linkedin.com/in/kavya-sri-katla/';"><i class="uil uil-linkedin"></i></span>
-        <span class="icon" onclick="window.location.href='https://github.com/katlakavyasri';"><i class="uil uil-github"></i></span>
-      </div>
-      <div class="featured-image">
-        <img src="assets/images/Kavyasri.jpeg" alt="Kavya Sri Katla" />
-      </div>
-    </section>
+  <section id="home" aria-label="Home introduction">
+    <div class="hero-text">
+      <h1>Hello, I'm Kavya Sri Katla</h1>
+      <p>I am a <span class="typedText"></span></p>
+      <p>Data Analyst | Power BI Developer | Enthusiastic Learner</p>
+    </div>
+    <div class="hero-image">
+      <img src="assets/images/Kavyasri.jpeg" alt="Photo of Kavya Sri Katla" loading="lazy" />
+    </div>
+  </section>
 
-    <section class="section" id="about">
-      <div class="top-header">
-        <h1>👩‍💻 About Me</h1>
-      </div>
-      <p>A goal-oriented Data Analyst pursuing an M.S. in Information Systems at Saint Louis University, with 5+ years of experience in data engineering, analytics, and digital strategy. Skilled in SQL, Python, Power BI, and cloud platforms like Azure and AWS. I specialize in converting complex data into strategic intelligence that drives innovation and impact. 🚀</p>
-    </section>
+  <section id="about" aria-label="About me">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate data analyst with experience in Power BI and data visualization. I love turning raw data into meaningful insights and building impactful dashboards.
+    </p>
+  </section>
 
-    <section class="section" id="education">
-      <div class="top-header">
-        <h1>🎓 Education</h1>
-      </div>
-      <ul>
-        <li><strong>Saint Louis University</strong> – M.S. in Information Systems, GPA: 3.86/4.0 (Aug 2023 – May 2025)</li>
+  <section id="education" aria-label="Education">
+    <h2>Education</h2>
+    <ul class="details-list">
+      <li>M.Sc. Computer Science, University XYZ, 2023</li>
+      <li>B.Sc. Information Technology, ABC College, 2021</li>
+    </ul>
+  </section>
+
+  <section id="experience" aria-label="Work experience">
+    <h2>Experience</h2>
+    <div class="grid-2">
+      <ul class="details-list">
+        <li><strong>Data Analyst Intern</strong> at Company A (2023) <br />
+          Worked on employment analytics and dashboard development.
+        </li>
+        <li><strong>Software Tester</strong> at Company B (2021 - 2022) <br />
+          Performed software testing and quality assurance tasks.
+        </li>
       </ul>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="top-header">
-        <h1>💼 Experience</h1>
-      </div>
-      <ul>
-        <li><strong>Data Analyst Associate Intern</strong> | Excelerate Global (May–Jul 2024)<br>
-        • Analyzed datasets using SQL & Python<br>
-        • Built dashboards in Power BI, Tableau, GDS<br>
-        • Delivered insights to enhance KPIs</li>
-
-        <li><strong>Digital Strategy Intern</strong> | Excelerate Global (Jan–Feb 2024)<br>
-        • Conducted market research<br>
-        • Applied RACE Strategy Framework<br>
-        • Improved engagement through data</li>
-
-        <li><strong>Data Engineer</strong> | Cognizant (2022–2023)<br>
-        • Built ETL pipelines with Azure Data Factory<br>
-        • Created financial models with SQL/Python<br>
-        • Developed Power BI reports for stakeholders</li>
-
-        <li><strong>Data Engineer</strong> | Quadient Technologies (2018–2022)<br>
-        • Designed and optimized ETL workflows<br>
-        • Created predictive models<br>
-        • Automated reconciliation and KPIs reporting</li>
+      <ul class="details-list">
+        <li><strong>Power BI Developer</strong> at Freelance Projects <br />
+          Created interactive dashboards and reports for clients.
+        </li>
+        <li><strong>Research Assistant</strong> at University XYZ <br />
+          Analyzed big data sets for academic projects.
+        </li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="projects">
-      <div class="top-header">
-        <h1>🛠️ Projects</h1>
-      </div>
-      <ul>
-        <li><strong>E-Learning Employability Analytics</strong> – Developed Power BI dashboards using Skillsoft Percipio data to drive academic decision-making.</li>
-        <li><strong>Cybersecurity Assessment</strong> – Performed penetration testing and vulnerability scans with Nmap & Nessus.</li>
-        <li><strong>Housing & Economic Insights</strong> – Visualized census data in Power BI to evaluate local economic trends.</li>
-      </ul>
-    </section>
+  <section id="projects" aria-label="Projects">
+    <h2>Projects</h2>
+    <div class="projects-filters" role="tablist" aria-label="Project categories">
+      <button class="active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button data-filter="powerbi" role="tab" aria-selected="false">Power BI</button>
+      <button data-filter="python" role="tab" aria-selected="false">Python</button>
+      <button data-filter="web" role="tab" aria-selected="false">Web</button>
+    </div>
+    <div class="projects-list">
+      <div class="project-item" data-category="powerbi">E-Learning Employability Analytics Dashboard</div>
+      <div class="project-item" data-category="python">Employee Database Analysis with Python</div>
+      <div class="project-item" data-category="powerbi">Skillsoft Percipio Response Analysis</div>
+      <div class="project-item" data-category="web">Personal Portfolio Website</div>
+      <div class="project-item" data-category="python">Data Cleaning Automation Scripts</div>
+    </div>
+  </section>
 
-    <section class="section" id="skills">
-      <div class="top-header">
-        <h1>💡 Skills</h1>
-      </div>
-      <ul>
-        <li><strong>Programming</strong>: Python, SQL, JavaScript</li>
-        <li><strong>Data Visualization</strong>: Power BI, Tableau, Google Data Studio</li>
-        <li><strong>ETL & Data Tools</strong>: Azure Data Factory, SQL Server, SSMS</li>
-        <li><strong>Cloud</strong>: Azure, AWS</li>
-        <li><strong>Security</strong>: Nmap, Nessus</li>
-        <li><strong>Other Tools</strong>: GitHub, Excel, PowerPoint, Jira</li>
-      </ul>
-    </section>
+  <section id="skills
+aria-label="Skills">
+  <h2>Skills</h2>
+  <div class="skills-list" role="list">
+    <div class="skill-card" role="listitem">Power BI</div>
+    <div class="skill-card" role="listitem">Python</div>
+    <div class="skill-card" role="listitem">SQL</div>
+    <div class="skill-card" role="listitem">Excel</div>
+    <div class="skill-card" role="listitem">Data Visualization</div>
+    <div class="skill-card" role="listitem">DAX</div>
+    <div class="skill-card" role="listitem">Data Analysis</div>
+  </div>
+</section>
 
-    <section class="section" id="certifications">
-      <div class="top-header">
-        <h1>📜 Certifications</h1>
-      </div>
-      <ul>
-        <li>Power BI Essential Training – LinkedIn</li>
-        <li>Microsoft Azure Fundamentals – Microsoft Learn</li>
-        <li>AWS Cloud Badges – Cloud Computing, Storage, Security</li>
-        <li>Selenium WebDriver with Java – Udemy</li>
-        <li>SQL Certification – Frontlines EduTech</li>
-        <li>AI Fundamentals – DataCamp</li>
-      </ul>
-    </section>
+<section id="certifications" aria-label="Certifications">
+  <h2>Certifications</h2>
+  <ul class="details-list">
+    <li>Microsoft Certified: Data Analyst Associate</li>
+    <li>Coursera Data Visualization with Python</li>
+    <li>Power BI Essential Training - LinkedIn Learning</li>
+  </ul>
+</section>
 
-    <section class="section" id="contact">
-      <div class="top-header">
-        <h1>📬 Contact</h1>
-      </div>
-      <p>Email: <a href="mailto:srikatlakavya@gmail.com" style="color:#87CEEB">srikatlakavya@gmail.com</a></p>
-      <p>Phone: <a href="tel:+14254729708" style="color:#87CEEB">+1 425 472 9708</a></p>
-      <p>Location: Saint Louis, MO, USA</p>
-    </section>
-  </main>
+<section id="contact" 
+aria-label="Contact information">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:kavyasrikatla@example.com">kavyasrikatla@example.com</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/kavyasrikatla" target="_blank" rel="noopener noreferrer">linkedin.com/in/kavyasrikatla</a></p>
+  <div class="social-icons" role="list">
+    <a href="https://github.com/kavyasrikatla" target="_blank" rel="noopener noreferrer" class="icon" aria-label="GitHub Profile">
+      <i class="uil uil-github-alt"></i>
+    </a>
+    <a href="https://twitter.com/kavyasrikatla" target="_blank" rel="noopener noreferrer" class="icon" aria-label="Twitter Profile">
+      <i class="uil uil-twitter"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/kavyasrikatla" target="_blank" rel="noopener noreferrer" class="icon" aria-label="LinkedIn Profile">
+      <i class="uil uil-linkedin"></i>
+    </a>
+  </div>
+</section>
 
-  <footer>
-    <p>✨ Designed & Built by Kavya Sri Katla ✨</p>
-  </footer>
+<footer>
+  &copy; 2025 Kavya Sri Katla. All Rights Reserved.
+</footer>
 
-  <script>
-    new Typed(".typedText", {
-      strings: ["Kavya Sri Katla", "Data Analyst", "Power BI Developer", "Azure Data Engineer", "Python & SQL Specialist"],
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 60,
-      backDelay: 1500
+<script>
+  // Typed text effect example (optional)
+  const typedText = document.querySelector('.typedText');
+  const words = ['Data Analyst', 'Power BI Developer', 'Enthusiastic Learner'];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let currentWord = '';
+  let isDeleting = false;
+
+  function type() {
+    if (wordIndex >= words.length) wordIndex = 0;
+    currentWord = words[wordIndex];
+
+    if (isDeleting) {
+      typedText.textContent = currentWord.substring(0, charIndex--);
+      if (charIndex < 0) {
+        isDeleting = false;
+        wordIndex++;
+        setTimeout(type, 500);
+      } else {
+        setTimeout(type, 100);
+      }
+    } else {
+      typedText.textContent = currentWord.substring(0, charIndex++);
+      if (charIndex > currentWord.length) {
+        isDeleting = true;
+        setTimeout(type, 1500);
+      } else {
+        setTimeout(type, 200);
+      }
+    }
+  }
+  type();
+
+  // Project filter buttons
+  const filterButtons = document.querySelectorAll('.projects-filters button');
+  const projectItems = document.querySelectorAll('.project-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active from all buttons and update aria-selected
+      filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      button.classList.add('active');
+      button.setAttribute('aria-selected', 'true');
+
+      const filter = button.getAttribute('data-filter');
+
+      projectItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
     });
-  </script>
-</body>
-</html>
+  });
+</script>
