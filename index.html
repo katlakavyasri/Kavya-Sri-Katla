@@ -316,6 +316,11 @@
     <button class="filter-btn" data-period="2022-2023">2022–2023</button>
     <button class="filter-btn" data-period="2018-2022">2018–2022</button>
   </div>
+  <div class="experience-filters-summary">
+  <span id="selected-company">Company: All</span> &nbsp;|&nbsp; 
+  <span id="selected-period">Year: All</span>
+</div>
+
 
   <!-- Experience Items -->
   <div class="grid-2" id="experience-list">
@@ -572,30 +577,9 @@
       });
     });
   </script>
-
   <script>
-  const companyButtons = document.querySelectorAll(".experience-company-filters .filter-btn");
-  const periodButtons = document.querySelectorAll(".experience-time-filters .filter-btn");
-  const experienceItems = document.querySelectorAll(".experience-item");
-
-  let activeCompany = "all";
-  let activePeriod = "all";
-
-  function updateExperienceVisibility() {
-    experienceItems.forEach(item => {
-      const company = item.getAttribute("data-company");
-      const period = item.getAttribute("data-period");
-
-      const matchCompany = (activeCompany === "all" || activeCompany === company);
-      const matchPeriod = (activePeriod === "all" || activePeriod === period);
-
-      if (matchCompany && matchPeriod) {
-        item.classList.remove("hidden");
-      } else {
-        item.classList.add("hidden");
-      }
-    });
-  }
+  const selectedCompanyLabel = document.getElementById("selected-company");
+  const selectedPeriodLabel = document.getElementById("selected-period");
 
   companyButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -603,6 +587,9 @@
       btn.classList.add("active");
       activeCompany = btn.getAttribute("data-company");
       updateExperienceVisibility();
+
+      // Update label text - show company name or 'All'
+      selectedCompanyLabel.textContent = "Company: " + (activeCompany === "all" ? "All" : activeCompany);
     });
   });
 
@@ -612,12 +599,16 @@
       btn.classList.add("active");
       activePeriod = btn.getAttribute("data-period");
       updateExperienceVisibility();
+
+      // Update label text
+      selectedPeriodLabel.textContent = "Year: " + (activePeriod === "all" ? "All" : activePeriod);
     });
   });
 
   // Initial call to show all
   updateExperienceVisibility();
 </script>
+
 
 </body>
 </html>
