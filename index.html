@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kavya Sri Katla | Data Analyst Portfolio</title>
 
-  <!-- Google Fonts (optional) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
+
+  <!-- Unicons Icons CDN -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
   <style>
+    /* Container */
     .container {
       max-width: 1000px;
       margin: 0 auto;
     }
-  </style>
+
     /* General typography and spacing */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -36,7 +41,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Section spacing */
     section {
       margin-bottom: 3rem;
     }
@@ -85,42 +89,60 @@
       box-shadow: 0 8px 12px rgba(0, 188, 212, 0.7);
     }
 
+    /* Skills filters */
     .skills-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
 
-.skills-filters button {
-  background-color: #222;
-  color: #fff;
-  border: 1px solid #555;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .skills-filters button {
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
 
-.skills-filters button.active {
-  background-color: #007BFF;
-  border-color: #007BFF;
-}
+    .skills-filters button.active,
+    .skills-filters button[aria-selected="true"] {
+      background-color: #007BFF;
+      border-color: #007BFF;
+      cursor: default;
+    }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 0.75rem;
-}
+    /* Skill items grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.75rem;
+    }
 
-.skill-item {
-  background-color: #1e1e1e;
-  padding: 0.75rem;
-  border-radius: 5px;
-  border: 1px solid #444;
-  color: #ddd;
-  font-size: 0.95rem;
-}
+    .skill-item {
+      background-color: #1e1e1e;
+      padding: 0.75rem;
+      border-radius: 5px;
+      border: 1px solid #444;
+      color: #ddd;
+      font-size: 0.95rem;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
+    /* Hidden skill items */
+    .skill-item.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.95);
+      height: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
     /* Projects filter buttons */
     .projects-filters {
@@ -167,11 +189,11 @@
       opacity: 0;
       pointer-events: none;
       transform: scale(0.95);
-      transition: opacity 0.3s ease, transform 0.3s ease;
       height: 0;
       margin: 0;
       padding: 0;
       overflow: hidden;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     /* Contact section links */
@@ -216,74 +238,8 @@
       border-top: 1px solid #333;
       font-size: 0.9rem;
     }
-  
   </style>
-
-  <!-- Icons from Unicons CDN -->
-  <link
-    rel="stylesheet"
-    href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-  />
 </head>
-<script>
-  const filterButtons = document.querySelectorAll('.projects-filters button');
-  const projects = document.querySelectorAll('.project-item');
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const category = button.dataset.filter;
-
-      // Update button states
-      filterButtons.forEach(btn => {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-selected', 'false');
-        btn.tabIndex = -1;
-      });
-      button.classList.add('active');
-      button.setAttribute('aria-selected', 'true');
-      button.tabIndex = 0;
-
-      // Show/hide projects
-      projects.forEach(project => {
-        if (category === 'all' || project.dataset.category === category) {
-          project.classList.remove('hidden');
-        } else {
-          project.classList.add('hidden');
-        }
-      });
-    });
-  });
-<script>
-  const skillButtons = document.querySelectorAll('.skills-filters button');
-  const skillItems = document.querySelectorAll('.skill-item');
-
-  skillButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const category = button.dataset.skill;
-
-      // Toggle button active state
-      skillButtons.forEach(btn => {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-selected', 'false');
-        btn.tabIndex = -1;
-      });
-      button.classList.add('active');
-      button.setAttribute('aria-selected', 'true');
-      button.tabIndex = 0;
-
-      // Show/hide skill items
-      skillItems.forEach(skill => {
-        if (category === 'all' || skill.dataset.skill === category) {
-          skill.classList.remove('hidden');
-        } else {
-          skill.classList.add('hidden');
-        }
-      });
-    });
-  });
-</script>
-
-
 <body>
   <header>
     <h1>Kavya Sri Katla</h1>
@@ -314,273 +270,147 @@
     <!-- Work Experience -->
     <section id="experience" aria-label="Work experience">
       <h2>Work Experience</h2>
-      <div class="grid-2">
-        <div>
-          <h3>Data Analyst Associate Intern</h3>
-          <p><em>Excelerate Global Internship Program | May 2024 – July 2024</em></p>
-          <ul>
-            <li>Extracted, cleaned, and analyzed large datasets using SQL and Python, ensuring high data accuracy.</li>
-            <li>Developed interactive dashboards and data visualizations using Google Data Studio, Power BI, and Tableau.</li>
-            <li>Identified key business trends, KPIs, and process inefficiencies, providing actionable insights.</li>
-            <li>Applied ETL processes to prepare datasets for business analytics.</li>
-          </ul>
-        </div>
+      <ul class="details-list">
+        <li>
+          <strong>Data Analyst Intern</strong> – Saint Louis University<br />
+          <em>Jan 2024 – Present</em><br />
+          Built Power BI dashboards tracking course completion, student engagement, and employability metrics to improve online course delivery and assessment.
+        </li>
+        <li>
+          <strong>Software Quality Assurance Engineer</strong> – Private Tech Firm<br />
+          <em>Feb 2019 – Jul 2023</em><br />
+          Managed software testing cycles, created test automation scripts, and collaborated with developers to enhance product quality.
+        </li>
+      </ul>
+    </section>
 
-        <div>
-          <h3>Digital Strategy Associate Intern</h3>
-          <p><em>Excelerate Global Internship Program | Jan 2024 – Feb 2024</em></p>
-          <ul>
-            <li>Conducted market research and asset evaluation to enhance business strategies.</li>
-            <li>Applied the RACE Strategy Framework for digital marketing analytics.</li>
-            <li>Optimized social media engagement, email campaigns, and customer targeting using data-driven insights.</li>
-          </ul>
-        </div>
+    <!-- Projects with filtering -->
+    <section id="projects" aria-label="Projects">
+      <h2>Projects</h2>
 
-        <div>
-          <h3>Data Engineer</h3>
-          <p><em>Cognizant Technology Solutions, Hyderabad, India | May 2022 – Mar 2023</em></p>
-          <ul>
-            <li>Designed and optimized banking ETL pipelines using Azure Data Factory and SQL Server, integrating structured and unstructured financial data across multiple regions.</li>
-            <li>Developed SQL-driven financial models, automating loan performance tracking, credit risk assessment, and profitability analysis.</li>
-            <li>Built Python-based anomaly detection models, identifying discrepancies in loan disbursement, repayments, and customer transactions.</li>
-            <li>Implemented data standardization frameworks reducing reporting discrepancies by 25%.</li>
-            <li>Designed and deployed Power BI dashboards improving strategic decision-making speed by 25%.</li>
-            <li>Leveraged Azure Synapse Analytics and Databricks for large-scale data processing, reducing data pipeline execution time by 40%.</li>
-            <li>Ensured compliance with banking data governance and financial reporting standards.</li>
-          </ul>
-        </div>
+      <div class="projects-filters" role="tablist" aria-label="Filter projects by category">
+        <button class="filter-btn active" aria-selected="true" data-filter="all" role="tab" tabindex="0">All</button>
+        <button class="filter-btn" aria-selected="false" data-filter="powerbi" role="tab" tabindex="-1">Power BI</button>
+        <button class="filter-btn" aria-selected="false" data-filter="python" role="tab" tabindex="-1">Python</button>
+      </div>
 
-        <div>
-          <h3>Data Engineer</h3>
-          <p><em>Quadient Technologies Pvt Ltd, Bengaluru, Karnataka | Mar 2018 – May 2022</em></p>
-          <ul>
-            <li>Designed and optimized ETL workflows integrating structured and unstructured data from multiple sources.</li>
-            <li>Developed SQL-based financial reporting models automating cost analysis and profitability tracking.</li>
-            <li>Built predictive models in Python analyzing infrastructure performance, optimizing server allocations.</li>
-            <li>Implemented master data governance framework reducing data discrepancies by 20%.</li>
-            <li>Designed and deployed Power BI dashboards improving executive decision-making speed by 30%.</li>
-            <li>Led automation of data reconciliation reducing manual workload by 40% and improving reporting accuracy.</li>
-          </ul>
+      <div class="grid-2" id="projects-list">
+        <div class="project-item" data-category="powerbi">
+          <h3>Employment Analytics Dashboard</h3>
+          <p>Developed a Power BI dashboard to analyze employment trends, skill gaps, and course completion rates using multiple datasets (Coursera, Skillsoft Percipio, Udemy).</p>
+        </div>
+        <div class="project-item" data-category="python">
+          <h3>Employee Database Analysis</h3>
+          <p>Conducted data exploration and visualization of an employee database using Python and Pandas to extract actionable insights.</p>
+        </div>
+        <div class="project-item" data-category="powerbi">
+          <h3>E-Learning Employability Analytics Dashboard</h3>
+          <p>Created interactive reports and measures in Power BI to monitor e-learning platform performance and learner employability.</p>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-<section id="skills">
-  <h2>Technical Skills</h2>
+    <!-- Skills with filtering -->
+    <section id="skills" aria-label="Skills">
+      <h2>Skills</h2>
 
-  <!-- Skill Category Filters -->
-  <div class="skills-filters" role="tablist" aria-label="Skill Categories">
-    <button class="active" data-skill="all" aria-selected="true" tabindex="0">All</button>
-    <button data-skill="programming" aria-selected="false" tabindex="-1">Programming & Database</button>
-    <button data-skill="visualization" aria-selected="false" tabindex="-1">Data Visualization & BI</button>
-    <button data-skill="dataengineering" aria-selected="false" tabindex="-1">Data Engineering & ETL</button>
-    <button data-skill="testing" aria-selected="false" tabindex="-1">Software Testing & Automation</button>
-    <button data-skill="cloud" aria-selected="false" tabindex="-1">Cloud & Security</button>
-    <button data-skill="tools" aria-selected="false" tabindex="-1">Tools & Platforms</button>
-  </div>
+      <div class="skills-filters" role="tablist" aria-label="Filter skills by category">
+        <button class="filter-btn active" aria-selected="true" data-filter="all" role="tab" tabindex="0">All</button>
+        <button class="filter-btn" aria-selected="false" data-filter="technical" role="tab" tabindex="-1">Technical</button>
+        <button class="filter-btn" aria-selected="false" data-filter="soft" role="tab" tabindex="-1">Soft</button>
+      </div>
 
-  <!-- Skill Items -->
-  <div class="skills-grid">
-    <div class="skill-item" data-skill="programming">Python</div>
-    <div class="skill-item" data-skill="programming">SQL (T-SQL, Stored Procedures)</div>
-    <div class="skill-item" data-skill="programming">NoSQL</div>
-    <div class="skill-item" data-skill="programming">JavaScript (Node.js, React)</div>
+      <div class="skills-grid" id="skills-list">
+        <div class="skill-item" data-category="technical">SQL</div>
+        <div class="skill-item" data-category="technical">Power BI</div>
+        <div class="skill-item" data-category="technical">Python</div>
+        <div class="skill-item" data-category="technical">Azure Cloud</div>
+        <div class="skill-item" data-category="technical">ETL Processes</div>
+        <div class="skill-item" data-category="soft">Communication</div>
+        <div class="skill-item" data-category="soft">Collaboration</div>
+        <div class="skill-item" data-category="soft">Problem-solving</div>
+        <div class="skill-item" data-category="soft">Time Management</div>
+      </div>
+    </section>
 
-    <div class="skill-item" data-skill="visualization">Power BI (DAX, Filtering, Dashboard Design)</div>
-    <div class="skill-item" data-skill="visualization">Tableau</div>
-    <div class="skill-item" data-skill="visualization">Google Data Studio</div>
+    <!-- Contact -->
+    <section id="contact" aria-label="Contact information">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:srikatlakavya@gmail.com">srikatlakavya@gmail.com</a></p>
+      <p>Phone: <a href="tel:+14254729708">+1 425-472-9708</a></p>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/kavyasrikatla" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="icon uil uil-linkedin-alt"></a>
+        <a href="https://github.com/kavyasrikatla" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="icon uil uil-github-alt"></a>
+      </div>
+    </section>
+  </main>
 
-    <div class="skill-item" data-skill="dataengineering">Data Cleaning</div>
-    <div class="skill-item" data-skill="dataengineering">Data Transformation</div>
-    <div class="skill-item" data-skill="dataengineering">ETL Processes</div>
-    <div class="skill-item" data-skill="dataengineering">Performance Optimization</div>
+  <footer>
+    <p>© 2025 Kavya Sri Katla. All rights reserved.</p>
+  </footer>
 
-    <div class="skill-item" data-skill="testing">Selenium</div>
-    <div class="skill-item" data-skill="testing">Manual & Automated Testing</div>
-    <div class="skill-item" data-skill="testing">Defect Tracking</div>
+  <script>
+    // Project filtering
+    const projectFilterButtons = document.querySelectorAll("#projects .filter-btn");
+    const projectItems = document.querySelectorAll("#projects-list .project-item");
 
-    <div class="skill-item" data-skill="cloud">Microsoft Azure</div>
-    <div class="skill-item" data-skill="cloud">AWS</div>
-    <div class="skill-item" data-skill="cloud">DevOps (CI/CD, GitHub Actions)</div>
-    <div class="skill-item" data-skill="cloud">Cybersecurity Basics (Nmap, Nessus)</div>
-
-    <div class="skill-item" data-skill="tools">SQL Server</div>
-    <div class="skill-item" data-skill="tools">SSMS</div>
-    <div class="skill-item" data-skill="tools">Jira</div>
-    <div class="skill-item" data-skill="tools">GitHub</div>
-    <div class="skill-item" data-skill="tools">Excel</div>
-    <div class="skill-item" data-skill="tools">PowerPoint</div>
-  </div>
-</section>
-
-
-    <!-- Certifications -->
-
-</section>
-<section id="certifications" aria-label="Certifications">
-  <h2>Certifications</h2>
-  <ul class="details-list">
-    <li><strong>Power BI Essential Training</strong> — LinkedIn Learning</li>
-    <li><strong>Microsoft Azure Fundamentals</strong> — Microsoft Learn</li>
-    <li><strong>AWS Cloud Badges</strong> (Cloud Computing, Storage, Security)</li>
-    <li><strong>Selenium WebDriver with Java</strong> — Udemy</li>
-    <li><strong>SQL Certification</strong> — Frontlines EduTech</li>
-    <li><strong>React.js Certification</strong> — Frontlines EduTech</li>
-    <li><strong>AI Fundamentals</strong> — DataCamp</li>
-  </ul>
-</section>
-<!-- Projects -->
-<section id="projects" aria-label="Projects">
-  <h2>Projects</h2>
-
-  <div class="projects-filters" role="tablist" aria-label="Filter projects">
-    <button
-      type="button"
-      class="active"
-      data-filter="all"
-      aria-selected="true"
-      role="tab"
-      tabindex="0"
-    >
-      All
-    </button>
-    <button type="button" data-filter="powerbi" aria-selected="false" role="tab" tabindex="-1">
-      Power BI
-    </button>
-    <button type="button" data-filter="python" aria-selected="false" role="tab" tabindex="-1">
-      Python
-    </button>
-    <button type="button" data-filter="sql" aria-selected="false" role="tab" tabindex="-1">
-      SQL
-    </button>
-  </div>
-
-  <div class="grid-2" id="project-list">
-    <article class="project-item" data-category="powerbi" tabindex="0">
-      <h3>E-Learning Employability Analytics Dashboard</h3>
-      <p>
-        Developed an interactive Power BI dashboard analyzing Coursera, Skillsoft Percipio, and Udemy data to monitor employability trends and learner progress.
-      </p>
-    </article>
-    <article class="project-item" data-category="python" tabindex="0">
-      <h3>Employee Database Analysis with Python</h3>
-      <p>
-        Performed data cleaning, querying, and visualization of employee datasets using Pandas and Matplotlib in Python.
-      </p>
-    </article>
-    <article class="project-item" data-category="sql" tabindex="0">
-      <h3>Bank Loan Performance Analysis</h3>
-      <p>
-        Built complex SQL queries and stored procedures to analyze loan disbursement and repayment performance for banking clients.
-      </p>
-    </article>
-    <article class="project-item" data-category="powerbi" tabindex="0">
-      <h3>Supply Chain Management Dashboard</h3>
-      <p>
-        Created a Contoso-style supply chain management dashboard in Power BI with a dark theme and advanced KPI visualizations.
-      </p>
-    </article>
-  </div>
-
-
-    
-<!-- Contact -->
-<section id="contact" aria-label="Contact information">
-  <h2>Contact</h2>
-  <p>
-    Email: <a href="mailto:srikatlakavya@gmail.com">srikatlakavya@gmail.com</a><br />
-    Phone: <a href="tel:+14254729708">+1 425-472-9708</a><br />
-    LinkedIn:
-    <a href="https://linkedin.com/in/kavya-sri-katla" target="_blank" rel="noopener noreferrer"
-      >linkedin.com/in/kavya-sri-katla</a
-    >
-  </p>
-  <div class="social-icons" role="list">
-    <a
-      href="https://linkedin.com/in/kavya-sri-katla"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="LinkedIn"
-      class="icon"
-      role="listitem"
-      ><i class="uil uil-linkedin"></i
-    ></a>
-    <a
-      href="https://github.com/kavyakatla"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="GitHub"
-      class="icon"
-      role="listitem"
-      ><i class="uil uil-github"></i
-    ></a>
-  </div>
-</section>
-</main>
-
-<footer>
-  &copy; 2025 Kavya Sri Katla. All rights reserved.
-</footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.projects-filters button');
-    const projects = document.querySelectorAll('.project-item');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const category = button.dataset.filter;
-
-        filterButtons.forEach(btn => {
-          btn.classList.remove('active');
-          btn.setAttribute('aria-selected', 'false');
-          btn.tabIndex = -1;
+    projectFilterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Remove active and aria-selected from all buttons
+        projectFilterButtons.forEach(b => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+          b.setAttribute("tabindex", "-1");
         });
-        button.classList.add('active');
-        button.setAttribute('aria-selected', 'true');
-        button.tabIndex = 0;
 
-        projects.forEach(project => {
-          if (category === 'all' || project.dataset.category === category) {
-            project.classList.remove('hidden');
+        // Set clicked button active
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+        btn.setAttribute("tabindex", "0");
+        btn.focus();
+
+        const filter = btn.getAttribute("data-filter");
+
+        projectItems.forEach(item => {
+          if (filter === "all" || item.getAttribute("data-category") === filter) {
+            item.classList.remove("hidden");
           } else {
-            project.classList.add('hidden');
+            item.classList.add("hidden");
           }
         });
       });
     });
 
-    const skillButtons = document.querySelectorAll('.skills-filters button');
-    const skillItems = document.querySelectorAll('.skill-item');
+    // Skills filtering
+    const skillsFilterButtons = document.querySelectorAll("#skills .filter-btn");
+    const skillItems = document.querySelectorAll("#skills-list .skill-item");
 
-    skillButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const category = button.dataset.skill;
-
-        skillButtons.forEach(btn => {
-          btn.classList.remove('active');
-          btn.setAttribute('aria-selected', 'false');
-          btn.tabIndex = -1;
+    skillsFilterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Remove active and aria-selected from all buttons
+        skillsFilterButtons.forEach(b => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+          b.setAttribute("tabindex", "-1");
         });
-        button.classList.add('active');
-        button.setAttribute('aria-selected', 'true');
-        button.tabIndex = 0;
 
-        skillItems.forEach(skill => {
-          if (category === 'all' || skill.dataset.skill === category) {
-            skill.classList.remove('hidden');
+        // Set clicked button active
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+        btn.setAttribute("tabindex", "0");
+        btn.focus();
+
+        const filter = btn.getAttribute("data-filter");
+
+        skillItems.forEach(item => {
+          if (filter === "all" || item.getAttribute("data-category") === filter) {
+            item.classList.remove("hidden");
           } else {
-            skill.classList.add('hidden');
+            item.classList.add("hidden");
           }
         });
       });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
-
-
-
