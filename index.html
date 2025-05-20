@@ -301,25 +301,7 @@
   <section id="experience" aria-label="Work experience">
   <h2>Work Experience</h2>
 
-  <!-- Filter by Company -->
-  <div class="experience-company-filters" role="tablist" aria-label="Filter by company">
-    <button class="filter-btn active" data-company="all">All Companies</button>
-    <button class="filter-btn" data-company="excelerate">Excelerate Global</button>
-    <button class="filter-btn" data-company="cognizant">Cognizant</button>
-    <button class="filter-btn" data-company="quadient">Quadient</button>
-  </div>
-
-  <!-- Filter by Time Period -->
-  <div class="experience-time-filters" role="tablist" aria-label="Filter by time period">
-    <button class="filter-btn active" data-period="all">All Time Periods</button>
-    <button class="filter-btn" data-period="2024">2024</button>
-    <button class="filter-btn" data-period="2022-2023">2022–2023</button>
-    <button class="filter-btn" data-period="2018-2022">2018–2022</button>
-  </div>
-  <div class="experience-filters-summary">
-  <span id="selected-company">Company: All</span> &nbsp;|&nbsp; 
-  <span id="selected-period">Year: All</span>
-</div>
+ 
 
 
   <!-- Experience Items -->
@@ -576,20 +558,41 @@
         });
       });
     });
-  </script>
-  <script>
-  const selectedCompanyLabel = document.getElementById("selected-company");
-  const selectedPeriodLabel = document.getElementById("selected-period");
+
+  const companyButtons = document.querySelectorAll(".experience-company-filters .filter-btn");
+  const periodButtons = document.querySelectorAll(".experience-time-filters .filter-btn");
+  const experienceItems = document.querySelectorAll(".experience-item");
+  const selectedCompanyEl = document.getElementById("selected-company");
+  const selectedPeriodEl = document.getElementById("selected-period");
+
+  let selectedCompany = "all";
+  let selectedPeriod = "all";
+
+  function filterExperience() {
+    experienceItems.forEach(item => {
+      const itemCompany = item.getAttribute("data-company");
+      const itemPeriod = item.getAttribute("data-period");
+
+      const matchesCompany = selectedCompany === "all" || selectedCompany === itemCompany;
+      const matchesPeriod = selectedPeriod === "all" || selectedPeriod === itemPeriod;
+
+      if (matchesCompany && matchesPeriod) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    selectedCompanyEl.textContent = `Company: ${selectedCompany === "all" ? "All" : selectedCompany.charAt(0).toUpperCase() + selectedCompany.slice(1)}`;
+    selectedPeriodEl.textContent = `Year: ${selectedPeriod === "all" ? "All" : selectedPeriod}`;
+  }
 
   companyButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       companyButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      activeCompany = btn.getAttribute("data-company");
-      updateExperienceVisibility();
-
-      // Update label text - show company name or 'All'
-      selectedCompanyLabel.textContent = "Company: " + (activeCompany === "all" ? "All" : activeCompany);
+      selectedCompany = btn.getAttribute("data-company");
+      filterExperience();
     });
   });
 
@@ -597,17 +600,15 @@
     btn.addEventListener("click", () => {
       periodButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      activePeriod = btn.getAttribute("data-period");
-      updateExperienceVisibility();
-
-      // Update label text
-      selectedPeriodLabel.textContent = "Year: " + (activePeriod === "all" ? "All" : activePeriod);
+      selectedPeriod = btn.getAttribute("data-period");
+      filterExperience();
     });
   });
 
-  // Initial call to show all
-  updateExperienceVisibility();
-</script>
+  
+
+  </script>
+  
 
 
 </body>
