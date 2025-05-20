@@ -237,16 +237,26 @@
 }
 .filter-btn {
   padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  background: white;
+  border: 2px solid #00bcd4;
+  background: #1f1f1f;
+  color: #00bcd4;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.filter-btn:hover {
+  background: #00bcd4;
+  color: #121212;
+}
+
 .filter-btn.active {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
+  background: #00bcd4;
+  color: #121212;
+  cursor: default;
 }
+
 
 
     /* Footer */
@@ -500,43 +510,6 @@
   </footer>
 
   <script>
-  const companyButtons = document.querySelectorAll('.experience-company-filters .filter-btn');
-  const timeButtons = document.querySelectorAll('.experience-time-filters .filter-btn');
-  const experienceItems = document.querySelectorAll('.experience-item');
-
-  let selectedCompany = 'all';
-  let selectedPeriod = 'all';
-
-  function updateExperienceFilter() {
-    experienceItems.forEach(item => {
-      const matchesCompany = (selectedCompany === 'all' || item.dataset.company === selectedCompany);
-      const matchesPeriod = (selectedPeriod === 'all' || item.dataset.period === selectedPeriod);
-
-      item.style.display = (matchesCompany && matchesPeriod) ? 'block' : 'none';
-    });
-  }
-
-  companyButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      companyButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      selectedCompany = button.dataset.company;
-      updateExperienceFilter();
-    });
-  });
-
-  timeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      timeButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      selectedPeriod = button.dataset.period;
-      updateExperienceFilter();
-    });
-  });
-</script>
-
-
-  <script>
     // Project filtering
     const projectFilterButtons = document.querySelectorAll("#projects .filter-btn");
     const projectItems = document.querySelectorAll("#projects-list .project-item");
@@ -599,5 +572,52 @@
       });
     });
   </script>
+
+  <script>
+  const companyButtons = document.querySelectorAll(".experience-company-filters .filter-btn");
+  const periodButtons = document.querySelectorAll(".experience-time-filters .filter-btn");
+  const experienceItems = document.querySelectorAll(".experience-item");
+
+  let activeCompany = "all";
+  let activePeriod = "all";
+
+  function updateExperienceVisibility() {
+    experienceItems.forEach(item => {
+      const company = item.getAttribute("data-company");
+      const period = item.getAttribute("data-period");
+
+      const matchCompany = (activeCompany === "all" || activeCompany === company);
+      const matchPeriod = (activePeriod === "all" || activePeriod === period);
+
+      if (matchCompany && matchPeriod) {
+        item.classList.remove("hidden");
+      } else {
+        item.classList.add("hidden");
+      }
+    });
+  }
+
+  companyButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      companyButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeCompany = btn.getAttribute("data-company");
+      updateExperienceVisibility();
+    });
+  });
+
+  periodButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      periodButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activePeriod = btn.getAttribute("data-period");
+      updateExperienceVisibility();
+    });
+  });
+
+  // Initial call to show all
+  updateExperienceVisibility();
+</script>
+
 </body>
 </html>
