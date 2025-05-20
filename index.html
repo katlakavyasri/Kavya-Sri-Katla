@@ -183,6 +183,36 @@
     href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
   />
 </head>
+<script>
+  const filterButtons = document.querySelectorAll('.projects-filters button');
+  const projects = document.querySelectorAll('.project-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.filter;
+
+      // Update button states
+      filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+        btn.tabIndex = -1;
+      });
+      button.classList.add('active');
+      button.setAttribute('aria-selected', 'true');
+      button.tabIndex = 0;
+
+      // Show/hide projects
+      projects.forEach(project => {
+        if (category === 'all' || project.dataset.category === category) {
+          project.classList.remove('hidden');
+        } else {
+          project.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+
 <body>
   <header>
     <h1>Kavya Sri Katla</h1>
@@ -347,7 +377,39 @@
     </article>
   </div>
 </section>
+<section id="certifications" aria-label="Certifications">
+  <h2>Certifications</h2>
+  <ul class="details-list">
+    <li><strong>Microsoft Certified: Data Analyst Associate</strong> – 2024</li>
+    <li><strong>Google Data Analytics Professional Certificate</strong> – 2023</li>
+    <li><strong>Coursera: Data Science and Machine Learning</strong> – 2023</li>
+    <li><strong>Power BI Essential Training</strong> — LinkedIn Learning</li>
+    <li><strong>Microsoft Azure Fundamentals</strong> — Microsoft Learn</li>
+    <li><strong>AWS Cloud Badges</strong> (Cloud Computing, Storage, Security)</li>
+    <li><strong>Selenium WebDriver with Java</strong> — Udemy</li>
+    <li><strong>SQL Certification</strong> — Frontlines EduTech</li>
+    <li><strong>AI Fundamentals</strong> — DataCamp</li>
+  </ul>
+</section>
 
+<section id="skills" aria-label="Skills">
+  <h2>Skills</h2>
+  <div class="skills-list" role="list">
+    <div class="skill-card" role="listitem">Python</div>
+    <div class="skill-card" role="listitem">SQL (T-SQL, Stored Procedures)</div>
+    <div class="skill-card" role="listitem">Power BI (DAX, Dashboard Design)</div>
+    <div class="skill-card" role="listitem">Data Visualization</div>
+    <div class="skill-card" role="listitem">ETL Processes</div>
+    <div class="skill-card" role="listitem">Azure & AWS Cloud Platforms</div>
+    <div class="skill-card" role="listitem">Tableau</div>
+    <div class="skill-card" role="listitem">Selenium & Automated Testing</div>
+    <div class="skill-card" role="listitem">Cybersecurity Tools (Nmap, Nessus)</div>
+    <div class="skill-card" role="listitem">Data Engineering</div>
+    <div class="skill-card" role="listitem">Predictive Modeling</div>
+  </div>
+</section>
+
+    
 <!-- Contact -->
 <section id="contact" aria-label="Contact information">
   <h2>Contact</h2>
