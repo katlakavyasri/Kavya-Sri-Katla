@@ -8,9 +8,9 @@
 
 ## 👩‍💻 Professional Summary
 
-Data Analyst with over 5 years of experience and expertise in **Excel, SQL, Python, Power BI**, and **Azure**. Currently pursuing an M.S. in Information Systems at **Saint Louis University**, I specialize in data cleaning, transformation, and visualization to deliver actionable business insights.
+Data Analyst with hands-on expertise in Excel, SQL, Python, and Power BI, recently completed an M.S. in Information Systems (May 2025) at Saint Louis University. Skilled in data cleaning, transformation, visualization, and business intelligence reporting. Proven experience in data validation, ETL pipelines, and performance optimization.
 
-With a proven ability to design scalable dashboards, optimize ETL processes, and apply statistical techniques for predictive analytics, I am passionate about using data to solve real-world business challenges through **evidence-driven consulting and strategic storytelling**.
+Driven by a passion for data-driven decision-making, I excel at translating complex datasets into actionable insights that support strategic growth and operational efficiency. I am committed to using analytics for evidence-based problem-solving, delivering real-world impact through innovative and consultative data solutions.
 
 ---
 
