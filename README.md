@@ -1,55 +1,117 @@
-Kavya Sri Katla - Portfolio
+# 💼 Kavya Sri Katla – Data Analyst Portfolio
 
-👋 About Me
-Hi, I'm Kavya Sri Katla, an Information Systems Master's student at Saint Louis University with a strong background in software testing, data analytics, and cybersecurity. I am passionate about leveraging data to solve real-world problems, and I am continuously expanding my skills in cloud computing, software development, and digital strategy.
+📧 srikatlakavya@gmail.com | 📱 +1 (425) 472-9708  
+🔗 [LinkedIn](https://www.linkedin.com/in/kavya-sri-katla)  
+📍 Duluth, Georgia
 
-My expertise includes:
+---
 
-•	Programming: Python, SQL, JavaScript, React
-•	Data Analytics: Data Visualization (Tableau, Google Data Studio), Data Cleaning & Analysis
-•	Cloud Platforms: Microsoft Azure, AWS
-•	Software Testing: Selenium WebDriver, Manual & Automated Testing
-•	Cybersecurity: Vulnerability Assessments, Penetration Testing
+## 👩‍💻 Professional Summary
 
-🧑‍💻 Technologies & Tools
-•	Languages: Python, SQL, JavaScript (React, Node.js)
-•	Frameworks: React, Tailwind CSS, Flask
-•	Tools: Git, GitHub, Microsoft Excel, Tableau, Google Data Studio, Selenium, Nmap, Nessus, AWS, Microsoft Azure
+Data Analyst with over 5 years of experience and expertise in **Excel, SQL, Python, Power BI**, and **Azure**. Currently pursuing an M.S. in Information Systems at **Saint Louis University**, I specialize in data cleaning, transformation, and visualization to deliver actionable business insights.
 
-📁 Projects
-1. E-Learning Employability Analytics Dashboard
-•	Technologies: React, Google Data Studio
-•	Description: Designed and developed a dashboard to track learner progress, evaluate course effectiveness, and provide employability insights for international students at Saint Louis University. This app visualizes data from Skillsoft Percipio, enabling improved decision-making in curriculum development and student progress monitoring.
-•	Responsibilities: Dashboard development, data visualization, user experience design.
-2. Cybersecurity Systems Assessment | Research & Vulnerability Analysis
-•	Technologies: Nmap, Nessus, Python
-•	Description: Conducted a comprehensive cybersecurity assessment on local company websites to identify security vulnerabilities and risks. Utilized Nmap and Nessus Essentials for scans and delivered actionable insights for vulnerability patching, improving overall network security by 40%.
-•	Responsibilities: Vulnerability assessment, penetration testing, scan analysis, report generation.
-3. Shopping Comparison Application
-•	Technologies: React, Python, TensorFlow
-•	Description: Developed an application to compare shopping items with photo recognition capabilities, achieving 90% accuracy. The app helped users save 30% shopping time, improving overall user satisfaction.
-•	Responsibilities: App development, machine learning model implementation, user interface design.
-4. Enterprise Architecture & System Infrastructure | Research & Analysis
-•	Technologies: Enterprise Architecture, SWOT Analysis, Microsoft Excel
-•	Description: Conducted a SWOT analysis for an enterprise and created a digital roadmap to improve operational efficiency. Applied enterprise architecture principles to model and streamline company operations, leading to a 15% improvement in process efficiency.
-•	Responsibilities: SWOT analysis, digital strategy, process optimization.
+With a proven ability to design scalable dashboards, optimize ETL processes, and apply statistical techniques for predictive analytics, I am passionate about using data to solve real-world business challenges through **evidence-driven consulting and strategic storytelling**.
 
-🏆 Certifications
-•	SQL Course | Frontlines EduTech Private Limited
-•	React JS | Frontlines EduTech Private Limited
-•	Microsoft Azure Fundamentals | Microsoft Learn
-•	AWS Educate Badges – Cloud Computing, Storage, Security, Cloud Operations
-•	Selenium WebDriver with Java Basics | Udemy
-•	STAAD.PRO | CANTEER CAD, Hyderabad
-•	Computer-Aided Drafting & Designing | ENGINEERS CAAD CENTRE (P) LTD, Hyderabad
+---
 
-📚 Education
-•	Master of Science in Information Systems | Saint Louis University (Aug 2023 – Ongoing)
-GPA: 4.0/4.0
-•	Master of Technology in Structural Engineering | Nova College of Engineering (Nov 2019 – Mar 2022)
-•	Bachelor of Technology in Civil Engineering | Anurag Group of Institutions (Sep 2013 – Mar 2017)
+## 🎓 Education
 
-📧 Get in Touch
-•	Email: kavyasrikatla13@gmail.com
-•	LinkedIn: https://www.linkedin.com/in/kavya-sri-katla/
+**Saint Louis University, MO**  
+*M.S. in Information Systems*  
+📅 Aug 2023 – May 2025 | 🎯 GPA: 3.87/4.0
 
+---
+
+## 💼 Work Experience
+
+### 📊 Data Analyst | Cognizant Technology Solutions, Hyderabad  
+**May 2022 – Mar 2023**
+- Developed 20+ ETL pipelines using **Azure Data Factory** and **SQL Server** across multi-region financial systems.
+- Automated financial models for loan tracking and credit risk, improving forecast accuracy by 20%.
+- Created Python-based anomaly detection for banking data, enhancing compliance readiness by 35%.
+- Built Power BI dashboards tracking customer default, loan trends, and cross-sell opportunities, reducing decision-making time by 50%.
+- Used **Azure Synapse Analytics** and **Databricks** for scalable processing, improving performance by 40%.
+
+### 📈 Data Analyst | Quadient Technologies Pvt Ltd, Bengaluru  
+**Mar 2018 – May 2022**
+- Optimized ETL workflows across 10+ business units; cut manual reconciliation by 60%.
+- Designed cost analysis models in **Power BI**, enhancing financial reporting by 20%.
+- Built predictive models in **Python**, saving $500K in server operation costs.
+- Led data governance projects, improving data consistency and reducing discrepancies by 20%.
+
+---
+
+## 📁 Projects
+
+### 📌 E-Learning Employability Analytics Dashboard  
+**Saint Louis University | Jan 2025 – May 2025**  
+- Developed a Power BI dashboard integrating **Coursera**, **Udemy**, and **Skillsoft Percipio**.
+- Created a custom **Employability Readiness Score** using DAX formulas.
+- Standardized multi-source data with Power Query for curriculum planning insights.
+
+### 📌 Data Visualization with U.S. Census Bureau  
+**Saint Louis University | Jan 2025 – Mar 2025**  
+- Modeled housing & economic trends using Power BI, DAX measures, and custom filters.
+- Delivered dynamic visualizations to support government-level decision-making.
+
+### 📌 Cybersecurity Systems Assessment & Vulnerability Analysis  
+**Saint Louis University | Jan 2024 – Mar 2024**  
+- Performed penetration testing using **Nmap** and **Nessus Essentials**.
+- Generated security reports and risk mitigation strategies.
+
+### 📌 Shopping Comparison Application  
+**React, Python, TensorFlow**  
+- Built a product photo recognition app with 90% accuracy, reducing shopping time by 30%.
+
+### 📌 Enterprise Architecture & System Infrastructure Strategy  
+- Performed SWOT analysis and digital strategy mapping for enterprise systems.
+- Improved operational efficiency by 15% via architectural modeling and Excel tools.
+
+---
+
+## 🌐 Virtual Internship Experience
+
+### Data Visualization Associate | Excelerate Global  
+**Jan 2024 – Feb 2024**  
+- Built dashboards using **Power BI**, **Google Data Studio**, and **Tableau**.
+- Enhanced KPI reporting efficiency by 40% and reduced ETL refresh time to 6 hours.
+
+### Digital Strategy Intern | Excelerate Global  
+**Jan 2024 – Feb 2024**  
+- Applied **RACE Framework** to assess digital campaigns, improving CTR by 15%.
+- Increased social engagement by 25% through targeted insights and campaign redesign.
+
+---
+
+## 🧠 Technical Skills
+
+- **Programming & Database**: Python, SQL (T-SQL, Stored Procedures), JavaScript (React, Node.js), NoSQL
+- **BI & Visualization**: Power BI (DAX, dashboards, advanced filters), Tableau, Google Data Studio
+- **ETL & Data Engineering**: Data Cleaning, Power Query, Performance Optimization
+- **Testing & QA**: Selenium WebDriver, Manual & Automated Testing
+- **Cloud Platforms**: Microsoft Azure, AWS, GitHub Actions, DevOps (CI/CD)
+- **Security & Tools**: Nmap, Nessus, SQL Server, SSMS, Jira, GitHub, Excel, PowerPoint
+
+---
+
+## 🏅 Certifications
+
+- **Data Analyst Associate** – DataCamp  
+- **Power BI with AI & ML**, **Power BI Essential Training** – LinkedIn Learning  
+- **SQL (Advanced)** – HackerRank  
+- **Microsoft Azure Fundamentals** – Microsoft Learn  
+- **Cloud Badges** – AWS Educate (Computing, Storage, Security)  
+- **Selenium WebDriver with Java** – Udemy  
+- **SQL & React JS** – Frontlines EduTech  
+- **STAAD.PRO**, **CAD & Drafting** – CANTEER CAD / Engineers CAAD Centre, Hyderabad
+
+---
+
+## 📫 Let's Connect
+
+I’m always open to data-driven opportunities, collaborations, or meaningful conversations in tech and analytics.
+
+- 📧 Email: srikatlakavya@gmail.com  
+- 🔗 LinkedIn: [linkedin.com/in/kavya-sri-katla](https://www.linkedin.com/in/kavya-sri-katla)
+
+---
