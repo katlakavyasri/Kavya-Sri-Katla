@@ -1,7 +1,7 @@
 # 💼 Kavya Sri Katla – Data Analyst Portfolio
 
 📧 srikatlakavya@gmail.com | 📱 +1 (425) 472-9708  
-🔗 [LinkedIn](https://www.linkedin.com/in/kavya-sri-katla)  
+🔗 [LinkedIn](www.linkedin.com/in/kavyasrikatla)  
 📍 Duluth, Georgia
 
 ---
@@ -112,6 +112,6 @@ Driven by a passion for data-driven decision-making, I excel at translating comp
 I’m always open to data-driven opportunities, collaborations, or meaningful conversations in tech and analytics.
 
 - 📧 Email: srikatlakavya@gmail.com  
-- 🔗 LinkedIn: [linkedin.com/in/kavya-sri-katla](https://www.linkedin.com/in/kavya-sri-katla)
+- 🔗 LinkedIn: [linkedin.com/in/kavya-sri-katla](www.linkedin.com/in/kavyasrikatla)
 
 ---
