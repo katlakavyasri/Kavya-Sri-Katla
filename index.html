@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kavya Sri Katla | Data Analyst Portfolio</title>
+  <meta name="description" content="Kavya Sri Katla | Data Analyst Portfolio showcasing work in Power BI, Python, SQL, Tableau, and more.">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
@@ -12,13 +13,6 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
   <style>
-    /* Container */
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* General typography and spacing */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #121212;
@@ -26,6 +20,17 @@
       margin: 0;
       padding: 1rem 2rem;
       line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     h1 {
@@ -45,14 +50,12 @@
       margin-bottom: 3rem;
     }
 
-    /* Layout grids */
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
 
-    /* Lists */
     .details-list {
       list-style: none;
       padding-left: 0;
@@ -66,259 +69,43 @@
       box-shadow: 0 2px 5px rgba(0, 188, 212, 0.3);
     }
 
-    /* Skills cards */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .skill-card {
-      background: #00bcd4;
-      color: #121212;
-      padding: 0.6rem 1rem;
-      border-radius: 20px;
-      font-weight: 600;
-      box-shadow: 0 4px 6px rgba(0, 188, 212, 0.4);
-      cursor: default;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgba(0, 188, 212, 0.7);
-    }
-
-    /* Skills filters */
-    .skills-filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-
-
-    btn.classList.add("active");
-    btn.setAttribute("aria-selected", "true");
-    btn.setAttribute("tabindex", "0");
-    btn.focus();
-
-    const filter = btn.getAttribute("data-filter");
-
-    skillItems.forEach(item => {
-      const categories = item.getAttribute("data-category").split(" ");
-      if (filter === "all" || categories.includes(filter)) {
-        item.classList.remove("hidden");
-      } else {
-        item.classList.add("hidden");
-      }
-    });
-  });
-});
-
-
-    /* Skill items grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 0.75rem;
-    }
-
-    .skill-item {
-      background-color: #1e1e1e;
-      padding: 0.75rem;
-      border-radius: 5px;
-      border: 1px solid #444;
-      color: #ddd;
-      font-size: 0.95rem;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    /* Hidden skill items */
-    .skill-item.hidden {
-      opacity: 0;
-      pointer-events: none;
-      transform: scale(0.95);
-      height: 0;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    .skill-item {
-  background-color: #1e1e1e;
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
-  border: 1px solid #444;
-  color: #ddd;
-  font-size: 0.95rem;
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 38px;
-  white-space: nowrap;
-  position: relative; /* for tooltip */
-  outline-offset: 2px;
-}
-
-.skill-item:hover,
-.skill-item:focus {
-  background-color: #333;
-  cursor: default;
-  outline: none;
-}
-
-/* Hidden skill items */
-.skill-item.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.95);
-  height: 0;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Tooltip styling */
-.skill-item[title]:hover::after,
-.skill-item[title]:focus::after {
-  content: attr(title);
-  position: absolute;
-  background: #00bcd4;
-  color: #121212;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  white-space: nowrap;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 6px;
-  pointer-events: none;
-  z-index: 10;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-
-
-    /* Projects filter buttons */
-    .projects-filters {
-      margin-bottom: 1rem;
+    .experience-company-filters,
+    .experience-time-filters {
+      margin: 1rem 0;
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .projects-filters button {
-      background: #222;
+    .filter-btn {
+      padding: 0.5rem 1rem;
       border: 2px solid #00bcd4;
+      background: #1f1f1f;
       color: #00bcd4;
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
       cursor: pointer;
+      border-radius: 20px;
       font-weight: 600;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .projects-filters button:hover {
+    .filter-btn:hover {
       background: #00bcd4;
       color: #121212;
     }
 
-    .projects-filters button.active,
-    .projects-filters button[aria-selected="true"] {
+    .filter-btn.active {
       background: #00bcd4;
       color: #121212;
       cursor: default;
     }
 
-    /* Project items */
-    .project-item {
+    .experience-item {
       background: #1f1f1f;
       padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 3px 7px rgba(0, 188, 212, 0.3);
-      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    /* Hidden projects */
-    .project-item.hidden {
-      opacity: 0;
-      pointer-events: none;
-      transform: scale(0.95);
-      height: 0;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    /* Contact section links */
-    #contact a {
-      color: #00bcd4;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-
-    #contact a:hover,
-    #contact a:focus {
-      color: #80deea;
-      outline: none;
-    }
-
-    /* Social icons */
-    .social-icons {
-      margin-top: 1rem;
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-icons .icon {
-      color: #00bcd4;
-      font-size: 1.6rem;
-      transition: color 0.2s ease;
-    }
-
-    .social-icons .icon:hover,
-    .social-icons .icon:focus {
-      color: #80deea;
-      outline: none;
-    }
-
-    .experience-company-filters, .experience-time-filters {
-  margin: 1rem 0;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.filter-btn {
-  padding: 0.5rem 1rem;
-  border: 2px solid #00bcd4;
-  background: #1f1f1f;
-  color: #00bcd4;
-  cursor: pointer;
-  border-radius: 20px;
-  font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.filter-btn:hover {
-  background: #00bcd4;
-  color: #121212;
-}
-
-.filter-btn.active {
-  background: #00bcd4;
-  color: #121212;
-  cursor: default;
-}
-
-
-
-    /* Footer */
     footer {
       text-align: center;
       color: #666;
@@ -335,246 +122,58 @@
     <p>srikatlakavya@gmail.com | +1 425-472-9708</p>
   </header>
 
-  <main>
-    <!-- Professional Summary -->
-    <section id="summary" aria-label="Professional summary">
-      <h2>Professional Summary</h2>
-      <p>
-       Results-driven Data Analyst with expertise in SQL, Python, Tableau and Power BI, holding a Master of Science in Information Systems. Proven ability to leverage data cleaning, pipeline development, and insightful dashboards to transform complex data into actionable business intelligence. Experienced in data validation, ETL processes, and performance optimization, consistently driving strategic decision-making and operational efficiency.
-    </section>
-
-    <!-- Education -->
-    <section id="education" aria-label="Education">
-      <h2>Education</h2>
-      <ul class="details-list">
-        <li>
-          <strong>Saint Louis University, St. Louis, MO</strong><br />
-          Master of Science in Information Systems | GPA: 3.87/4.0<br />
-          Aug 2023 – May 2025
-        </li>
-      </ul>
-    </section>
-
-    <!-- Work Experience -->
-  <section id="experience" aria-label="Work experience">
-  <h2>Work Experience</h2>
-
- 
-
-
-  <!-- Experience Items -->
-  <div class="grid-2" id="experience-list">
-    <div class="experience-item" data-company="excelerate" data-period="2024">
-      <h3>Data Analyst Associate Intern</h3>
-      <p><em>Excelerate Global | May 2024 – July 2024</em></p>
-      <ul>
-        <li>Extracted, cleaned, and analyzed large datasets using SQL and Python, reported accuracy by 30%.</li>
-            <li>Developed interactive dashboards and data visualizations using Google Data Studio, Power BI, and Tableau reducing manual reporting by 30%.</li>
-            <li>Identified key business trends, KPIs, and process inefficiencies, providing actionable insights.</li>
-            <li>Streamlined ETL workflows, accelerating data refresh cycles from 24 hours to under 6 hours.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item" data-company="excelerate" data-period="2024">
-      <h3>Digital Strategy Associate Intern</h3>
-      <p><em>Excelerate Global | Jan 2024 – Feb 2024</em></p>
-      <ul>
-        <li>Conducted market research and asset evaluation to enhance business strategies.</li>
-            <li>Implemented the RACE Framework to analyze 10+ digital campaigns, boosting email CTR by 15% and social engagement by 25%.</li>
-            <li>Optimized social media engagement, email campaigns, and customer targeting using data-driven insights.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item" data-company="cognizant" data-period="2022-2023">
-      <h3>Data Analyst</h3>
-      <p><em>Cognizant | May 2022 – Mar 2023</em></p>
-      <ul>
-        <li>Designed and optimized banking for 20+ ETL pipelines using Azure Data Factory and SQL Server, integrating structured and unstructured financial data across multiple regions.</li>
-            <li>Developed SQL-driven financial models, automating loan performance tracking, credit risk assessment, and profitability analysis, improving forecasting accuracy by 20%.</li>
-            <li>Built Python-based anomaly detection models, identifying discrepancies in loan disbursement, repayments, and customer transactions, strengthening regulatory compliance and audit readiness by 35%.</li>
-            <li>Implemented data standardization frameworks reducing reporting discrepancies by 25%.</li>
-            <li>Designed and deployed Power BI dashboards improving strategic decision-making speed by 50%.</li>
-            <li>Leveraged Azure Synapse Analytics and Databricks for large-scale data processing, reducing data pipeline execution time by 40%.</li>
-            <li>Ensured compliance with banking data governance and financial reporting standards, improving regulatory audit readiness.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item" data-company="quadient" data-period="2018-2022">
-      <h3>Data Analyst</h3>
-      <p><em>Quadient | Mar 2018 – May 2022</em></p>
-      <ul>
-        <li>Designed and optimized ETL workflows integrating structured and unstructured data from multiple sources, improving data accessibility for real-time analytics across 10+ business units.</li>
-            <li>Automated reconciliation workflows, reducing manual effort by 60% and reported turnaround time from 5 to 2 days.</li>
-            <li>Developed SQLand Power BI based financial reporting models automating cost analysis and profitability tracking, leading to a 20% improvement in financial forecasting accuracy.</li>
-            <li>Built predictive models in Python analyzing infrastructure performance, optimizing server allocations, reducing operational costs by $500K annually.</li>
-            <li>Implemented master data governance framework reducing data discrepancies by 20%.</li>
-            <li>Designed and deployed Power BI dashboards improving executive decision-making speed by 25%.</li>
-            <li>Led automation of data reconciliation reducing manual workload by 40% and improving reporting accuracy.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Projects with filtering -->
-<section id="projects" aria-label="Projects">
-  <h2>Projects</h2>
-
-  <div class="projects-filters" role="tablist" aria-label="Filter projects by category">
-    <button class="filter-btn active" aria-selected="true" data-filter="all" role="tab" tabindex="0">All</button>
-    <button class="filter-btn" aria-selected="false" data-filter="powerbi" role="tab" tabindex="-1">Power BI</button>
-    <button class="filter-btn" aria-selected="false" data-filter="python" role="tab" tabindex="-1">Python</button>
-    <button class="filter-btn" aria-selected="false" data-filter="cybersecurity" role="tab" tabindex="-1">Cybersecurity</button>
-  </div>
-
-  <div class="grid-2" id="projects-list">
-    <div class="project-item" data-category="powerbi">
-      <h3>E-Learning Employability Analytics Application</h3>
-      <p>
-        Led the design and development of a comprehensive Power BI dashboard analyzing data from Skillsoft Percipio, Coursera, and Udemy.
-        Applied statistical methods and visualizations to assess skill gaps, course effectiveness, and student employability,
-        providing actionable insights for academic and career advancement.
-      </p>
-    </div>
-
-    <div class="project-item" data-category="python">
-      <h3>Employee Database Analysis</h3>
-      <p>
-        Conducted in-depth analysis of employee data using Python (Pandas, Matplotlib) to uncover trends, performance metrics,
-        and actionable workforce insights.
-      </p>
-    </div>
-
-    <div class="project-item" data-category="powerbi">
-      <h3>Housing & Economic Insights Dashboard</h3>
-      <p>
-        Created interactive Power BI reports using U.S. Census Bureau data to visualize housing affordability and economic trends.
-        Applied DAX for calculated measures and enhanced user experience with dynamic filters.
-      </p>
-    </div>
-
-    <div class="project-item" data-category="cybersecurity">
-      <h3>Cybersecurity Systems Assessment</h3>
-      <p>
-        Performed vulnerability assessments and penetration testing using Nmap and Nessus.
-        Identified system weaknesses and provided detailed mitigation strategies to strengthen security posture.
-      </p>
-    </div>
-
-    <!-- New Projects Added Below -->
-
-    <div class="project-item" data-category="python powerbi">
-      <h3>Health Insurance Data Deep Dive</h3>
-      <p>
-        Developed an automated ETL pipeline with Python and SQLite for cleaning and feature enrichment. Created a detailed Power BI dashboard
-        to analyze cost drivers, regional premium variations, and high-risk groups using DAX and interactive filters.
-      </p>
-    </div>
-
-    <div class="project-item" data-category="python powerbi">
-      <h3>Sales Operations Analytics Dashboard</h3>
-      <p>
-        Cleaned and analyzed 50,000+ historical car sales records using Python and Power BI. Delivered interactive dashboards with
-        advanced DAX measures (YTD, MTD, YoY) highlighting pricing trends, top models, and sales performance.
-      </p>
-    </div>
-
-    <div class="project-item" data-category="powerbi tableau">
-      <h3>The Scroll Trap: Social Media and Productivity Analysis</h3>
-      <p>
-        Analyzed behavioral data from 30,000 users using Power BI and Tableau to explore correlations between screen time and productivity.
-        Produced dashboards and actionable insights guiding digital wellness and time management strategies.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<!-- Skills Section -->
-<section id="skills" aria-label="Skills">
-  <h2>Skills</h2>
-
-  <div class="skills-filters" role="tablist" aria-label="Filter skills by category">
-    <button class="filter-btn active" aria-selected="true" data-filter="all" role="tab" tabindex="0">All</button>
-    <button class="filter-btn" aria-selected="false" data-filter="programming" role="tab" tabindex="-1">Programming & Database</button>
-    <button class="filter-btn" aria-selected="false" data-filter="visualization" role="tab" tabindex="-1">Data Visualization & BI</button>
-    <button class="filter-btn" aria-selected="false" data-filter="etl" role="tab" tabindex="-1">Data Engineering & ETL</button>
-    <button class="filter-btn" aria-selected="false" data-filter="testing" role="tab" tabindex="-1">Software Testing & Automation</button>
-    <button class="filter-btn" aria-selected="false" data-filter="cloud" role="tab" tabindex="-1">Cloud & Security</button>
-    <button class="filter-btn" aria-selected="false" data-filter="tools" role="tab" tabindex="-1">Tools & Platforms</button>
-    <button class="filter-btn" aria-selected="false" data-filter="soft" role="tab" tabindex="-1">Soft</button>
-  </div>
-
-  <div class="skills-grid" id="skills-list">
-    <!-- Programming & Database -->
-    <div class="skill-item" tabindex="0" data-category="programming etl" title="Proficient in Python scripting for automation and ETL processes">🐍 Python</div>
-    <div class="skill-item" tabindex="0" data-category="programming" title="Advanced SQL querying, stored procedures, and performance tuning">🗄️ SQL (T-SQL, stored procedures)</div>
-    <div class="skill-item" tabindex="0" data-category="programming" title="Experience with NoSQL databases like MongoDB">📂 NoSQL</div>
-    <div class="skill-item" tabindex="0" data-category="programming" title="JavaScript for backend (Node.js) and frontend (React)">⚛️ JavaScript (Node.js, React)</div>
-
-    <!-- Data Visualization & BI -->
-    <div class="skill-item" tabindex="0" data-category="visualization" title="Power BI expertise including DAX and dashboard design">📊 Power BI (DAX, Dashboard Design)</div>
-    <div class="skill-item" tabindex="0" data-category="visualization" title="Tableau Desktop and Server for data visualization">📈 Tableau</div>
-    <div class="skill-item" tabindex="0" data-category="visualization" title="Google Data Studio for report building">📋 Google Data Studio</div>
-
-    <!-- Data Engineering & ETL -->
-    <div class="skill-item" tabindex="0" data-category="etl" title="Data cleaning and transformation best practices">🧹 Data Cleaning</div>
-    <div class="skill-item" tabindex="0" data-category="etl" title="ETL process design and optimization">🔄 ETL Processes</div>
-    <div class="skill-item" tabindex="0" data-category="etl" title="Performance tuning for data workflows">⚡ Performance Optimization</div>
-    <div class="skill-item" tabindex="0" data-category="etl" title="Data transformation techniques">🔧 Transformation</div>
-
-    <!-- Software Testing & Automation -->
-    <div class="skill-item" tabindex="0" data-category="testing" title="Selenium automation for web testing">🧪 Selenium</div>
-    <div class="skill-item" tabindex="0" data-category="testing" title="Manual and automated testing methodologies">🔍 Manual & Automated Testing</div>
-    <div class="skill-item" tabindex="0" data-category="testing" title="Defect tracking and resolution">🐞 Defect Tracking</div>
-
-    <!-- Cloud & Security -->
-    <div class="skill-item" tabindex="0" data-category="cloud" title="Microsoft Azure cloud services">☁️ Microsoft Azure</div>
-    <div class="skill-item" tabindex="0" data-category="cloud" title="Amazon Web Services (AWS)">☁️ Amazon Web Services (AWS)</div>
-    <div class="skill-item" tabindex="0" data-category="cloud" title="DevOps with CI/CD pipelines (GitHub Actions)">🔧 DevOps (CI/CD, GitHub Actions)</div>
-    <div class="skill-item" tabindex="0" data-category="cloud" title="Basic cybersecurity tools and techniques">🔐 Cybersecurity Basics (Nmap, Nessus)</div>
-
-    <!-- Tools & Platforms -->
-    <div class="skill-item" tabindex="0" data-category="tools" title="Microsoft SQL Server & Management Studio">🛠️ SQL Server</div>
-    <div class="skill-item" tabindex="0" data-category="tools" title="SQL Server Management Studio (SSMS)">🛠️ SSMS</div>
-    <div class="skill-item" tabindex="0" data-category="tools" title="Project tracking with Jira">📋 Jira</div>
-    <div class="skill-item" tabindex="0" data-category="tools" title="Version control with GitHub">🐙 GitHub</div>
-    <div class="skill-item" tabindex="0" data-category="tools" title="Advanced Excel skills">📊 Excel</div>
-    <div class="skill-item" tabindex="0" data-category="tools" title="Presentation skills with PowerPoint">📽️ PowerPoint</div>
-
-    <!-- Soft Skills -->
-    <div class="skill-item" tabindex="0" data-category="soft" title="Clear communication and stakeholder management">💬 Communication</div>
-    <div class="skill-item" tabindex="0" data-category="soft" title="Team collaboration and leadership">🤝 Collaboration</div>
-    <div class="skill-item" tabindex="0" data-category="soft" title="Analytical problem-solving">🧠 Problem-solving</div>
-    <div class="skill-item" tabindex="0" data-category="soft" title="Efficient time management">⏰ Time Management</div>
-  </div>
-</section>
-
-
-    <section class="section" id="certifications">
-      <div class="top-header">
-        <h1>📜 Certifications</h1>
+  <main class="container">
+    <section>
+      <h2>Experience Filters</h2>
+      <div class="experience-company-filters">
+        <button class="filter-btn active" data-company="all">All Companies</button>
+        <button class="filter-btn" data-company="excelerate">Excelerate</button>
+        <button class="filter-btn" data-company="cognizant">Cognizant</button>
+        <button class="filter-btn" data-company="quadient">Quadient</button>
       </div>
-      <ul>
-        <li>Power BI Essential Training, Power BI: Integrating AI and Machine Learning – LinkedIn</li>
-        <li>SQL(Advanced) – DataCamp</li>
-        <li>Microsoft Azure Fundamentals – Microsoft Learn</li>
-        <li>Cloud Computing, Storage, Security – AWS Cloud Badges</li>
-        <li>Selenium WebDriver with Java – Udemy</li>
-        <li>SQL Certification – Frontlines EduTech</li>
-        <li>React JS Certification – Frontlines EduTech</li>
-        <li>AI Fundamentals – DataCamp</li>
-      </ul>
+      <div class="experience-time-filters">
+        <button class="filter-btn active" data-period="all">All Years</button>
+        <button class="filter-btn" data-period="2024">2024</button>
+        <button class="filter-btn" data-period="2022-2023">2022–2023</button>
+        <button class="filter-btn" data-period="2018-2022">2018–2022</button>
+      </div>
     </section>
 
+    <section>
+      <h2>Work Experience</h2>
+      <div class="grid-2" id="experience-list">
+        <div class="experience-item" data-company="excelerate" data-period="2024">
+          <h3>Data Analyst Associate Intern</h3>
+          <p><em>Excelerate Global | May 2024 – July 2024</em></p>
+          <ul>
+            <li>Extracted, cleaned, and analyzed large datasets using SQL and Python, reported accuracy by 30%.</li>
+            <li>Built dashboards in Google Data Studio, Power BI, and Tableau reducing manual reporting by 30%.</li>
+          </ul>
+        </div>
 
-    <!-- Contact -->
-    <section id="contact" aria-label="Contact information">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:srikatlakavya@gmail.com">srikatlakavya@gmail.com</a></p>
-      <p>Phone: <a href="tel:+14254729708">+1 425-472-9708</a></p>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/kavya-sri-katla/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="icon uil uil-linkedin-alt"></a>
-        <a href="https://github.com/kavyasrikatla" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="icon uil uil-github-alt"></a>
+        <div class="experience-item" data-company="excelerate" data-period="2024">
+          <h3>Digital Strategy Associate Intern</h3>
+          <p><em>Excelerate Global | Jan 2024 – Feb 2024</em></p>
+          <ul>
+            <li>Implemented the RACE Framework to analyze 10+ digital campaigns, boosting email CTR by 15%.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item" data-company="cognizant" data-period="2022-2023">
+          <h3>Data Analyst</h3>
+          <p><em>Cognizant | May 2022 – Mar 2023</em></p>
+          <ul>
+            <li>Designed and optimized 20+ ETL pipelines using Azure Data Factory and SQL Server.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item" data-company="quadient" data-period="2018-2022">
+          <h3>Data Analyst</h3>
+          <p><em>Quadient | Mar 2018 – May 2022</em></p>
+          <ul>
+            <li>Automated reconciliation workflows, reducing manual effort by 60%.</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
@@ -584,125 +183,42 @@
   </footer>
 
   <script>
-    // Project filtering
-    const projectFilterButtons = document.querySelectorAll("#projects .filter-btn");
-    const projectItems = document.querySelectorAll("#projects-list .project-item");
+    const companyButtons = document.querySelectorAll(".experience-company-filters .filter-btn");
+    const periodButtons = document.querySelectorAll(".experience-time-filters .filter-btn");
+    const experienceItems = document.querySelectorAll(".experience-item");
 
-    projectFilterButtons.forEach((btn) => {
+    let selectedCompany = "all";
+    let selectedPeriod = "all";
+
+    function filterExperience() {
+      experienceItems.forEach(item => {
+        const itemCompany = item.getAttribute("data-company");
+        const itemPeriod = item.getAttribute("data-period");
+
+        const matchesCompany = selectedCompany === "all" || selectedCompany === itemCompany;
+        const matchesPeriod = selectedPeriod === "all" || selectedPeriod === itemPeriod;
+
+        item.style.display = (matchesCompany && matchesPeriod) ? "block" : "none";
+      });
+    }
+
+    companyButtons.forEach(btn => {
       btn.addEventListener("click", () => {
-        // Remove active and aria-selected from all buttons
-        projectFilterButtons.forEach(b => {
-          b.classList.remove("active");
-          b.setAttribute("aria-selected", "false");
-          b.setAttribute("tabindex", "-1");
-        });
-
-        // Set clicked button active
+        companyButtons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
-        btn.setAttribute("aria-selected", "true");
-        btn.setAttribute("tabindex", "0");
-        btn.focus();
-
-        const filter = btn.getAttribute("data-filter");
-
-        projectItems.forEach(item => {
-          if (
-            filter === "all" || 
-            item.getAttribute("data-category").split(" ").includes(filter)
-          ) {
-            item.classList.remove("hidden");
-          } else {
-
-            item.classList.add("hidden");
-          }
-
-        });
+        selectedCompany = btn.getAttribute("data-company");
+        filterExperience();
       });
     });
 
-    // Skills filtering
-    const skillsFilterButtons = document.querySelectorAll("#skills .filter-btn");
-    const skillItems = document.querySelectorAll("#skills-list .skill-item");
-
-    skillsFilterButtons.forEach((btn) => {
+    periodButtons.forEach(btn => {
       btn.addEventListener("click", () => {
-        // Remove active and aria-selected from all buttons
-        skillsFilterButtons.forEach(b => {
-          b.classList.remove("active");
-          b.setAttribute("aria-selected", "false");
-          b.setAttribute("tabindex", "-1");
-        });
-
-        // Set clicked button active
+        periodButtons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
-        btn.setAttribute("aria-selected", "true");
-        btn.setAttribute("tabindex", "0");
-        btn.focus();
-
-        const filter = btn.getAttribute("data-filter");
-
-        skillItems.forEach(item => {
-          const categories = item.getAttribute("data-category").split(" ");
-          if (filter === "all" || categories.includes(filter)) {
-            item.classList.remove("hidden");
-          } else {
-    item.classList.add("hidden");
-          }
-        });      
+        selectedPeriod = btn.getAttribute("data-period");
+        filterExperience();
       });
     });
-
-  const companyButtons = document.querySelectorAll(".experience-company-filters .filter-btn");
-  const periodButtons = document.querySelectorAll(".experience-time-filters .filter-btn");
-  const experienceItems = document.querySelectorAll(".experience-item");
-  const selectedCompanyEl = document.getElementById("selected-company");
-  const selectedPeriodEl = document.getElementById("selected-period");
-
-  let selectedCompany = "all";
-  let selectedPeriod = "all";
-
-  function filterExperience() {
-    experienceItems.forEach(item => {
-      const itemCompany = item.getAttribute("data-company");
-      const itemPeriod = item.getAttribute("data-period");
-
-      const matchesCompany = selectedCompany === "all" || selectedCompany === itemCompany;
-      const matchesPeriod = selectedPeriod === "all" || selectedPeriod === itemPeriod;
-
-      if (matchesCompany && matchesPeriod) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    });
-
-    selectedCompanyEl.textContent = `Company: ${selectedCompany === "all" ? "All" : selectedCompany.charAt(0).toUpperCase() + selectedCompany.slice(1)}`;
-    selectedPeriodEl.textContent = `Year: ${selectedPeriod === "all" ? "All" : selectedPeriod}`;
-  }
-
-  companyButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      companyButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      selectedCompany = btn.getAttribute("data-company");
-      filterExperience();
-    });
-  });
-
-  periodButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      periodButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      selectedPeriod = btn.getAttribute("data-period");
-      filterExperience();
-    });
-  });
-
-  
-
   </script>
-  
-
-
 </body>
 </html>
