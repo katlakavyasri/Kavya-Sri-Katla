@@ -12,106 +12,79 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
   <style>
-    /* Global background gradient and base colors */
     body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #e0e7ea;
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 2rem;
+      background-color: #121212;
+      color: #eee;
       line-height: 1.6;
-      transition: background 0.5s ease;
     }
 
     header, footer {
       text-align: center;
       margin-bottom: 2rem;
-      color: #00d2ff;
-      text-shadow: 0 0 6px #00d2ff80;
     }
 
     h1, h2 {
       color: #00bcd4;
-      text-shadow: 0 0 5px #00bcd4aa;
-      margin-bottom: 0.5rem;
     }
 
     h2 {
       border-bottom: 2px solid #00bcd4;
       padding-bottom: 0.3rem;
-      margin-top: 2rem;
     }
 
     section {
       margin-bottom: 3rem;
     }
 
-    /* Lists */
     .details-list {
       list-style: none;
       padding-left: 0;
     }
 
     .details-list li {
-      background: #1f2a35;
+      background: #1f1f1f;
       padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 188, 212, 0.3);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 188, 212, 0.3);
       margin-bottom: 1rem;
-      transition: background 0.3s ease;
     }
 
-    .details-list li:hover {
-      background: #0a3940;
-      box-shadow: 0 5px 15px #00bcd4bb;
-    }
-
-    /* Links */
     a {
       color: #00bcd4;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
 
     a:hover {
       color: #80deea;
-      text-decoration: underline;
     }
 
-    /* Social icons */
     .social-icons {
       margin-top: 1rem;
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
       justify-content: center;
     }
 
     .icon {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: #00bcd4;
-      transition: color 0.3s ease;
     }
 
     .icon:hover {
       color: #80deea;
     }
 
-    /* Project, skill, certification items */
-    .project-item, .skill-item, .cert-item {
-      background: #1f2a35;
+    .skill-item, .cert-item {
+      background: #1f1f1f;
       padding: 1rem;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-bottom: 1rem;
-      box-shadow: 0 3px 10px rgba(0, 188, 212, 0.3);
-      transition: background 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 188, 212, 0.3);
     }
 
-    .project-item:hover, .skill-item:hover, .cert-item:hover {
-      background: #0a3940;
-      box-shadow: 0 6px 18px #00bcd4cc;
-    }
-
-    /* Filter buttons */
     .filter-controls {
       margin-bottom: 1rem;
       text-align: center;
@@ -119,108 +92,51 @@
 
     .filter-btn {
       margin: 0.3rem;
-      padding: 0.6rem 1.3rem;
+      padding: 0.5rem 1rem;
       border: none;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #00bcd4, #00838f);
-      color: #fff;
+      border-radius: 5px;
+      background-color: #00bcd4;
+      color: #000;
       cursor: pointer;
-      font-weight: 600;
-      box-shadow: 0 3px 10px #00bcd4aa;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-    }
-
-    .filter-btn:hover {
-      background: linear-gradient(135deg, #26c6da, #00acc1);
-      box-shadow: 0 6px 20px #26c6dacc;
     }
 
     .filter-btn.active {
-      background: linear-gradient(135deg, #80deea, #4fb3bf);
-      color: #00333b;
-      box-shadow: 0 6px 25px #80deea;
+      background-color: #80deea;
     }
 
-    /* Skills Cloud Section */
-    #skills {
-      max-width: 900px;
-      margin: 0 auto 3rem;
+    /* Accordion styles */
+    .accordion-button {
+      background-color: #00bcd4;
+      color: #000;
+      cursor: pointer;
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      transition: background-color 0.3s;
     }
 
-    .skills-cloud {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      perspective: 800px;
+    .accordion-button:hover {
+      background-color: #80deea;
     }
 
-    .skill {
-      background: linear-gradient(135deg, #00bcd4, #007d8a);
-      color: #fff;
-      padding: 0.6rem 1.3rem;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: default;
-      box-shadow: 0 4px 15px rgba(0, 188, 212, 0.7);
-      user-select: none;
-      animation: floatBubble 6s ease-in-out infinite alternate;
-      will-change: transform, filter;
-      filter: drop-shadow(0 0 6px rgba(0, 188, 212, 0.8));
-      transition: background 0.3s ease, transform 0.3s ease;
+    .accordion-content {
+      background-color: #1f1f1f;
+      color: #eee;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      display: none;
+      line-height: 1.5;
     }
 
-    /* Alternate animation delay for natural floating */
-    .skill:nth-child(odd) {
-      animation-delay: 0s;
+    .accordion-content p {
+      margin: 0.5rem 0;
     }
-    .skill:nth-child(even) {
-      animation-delay: 3s;
-    }
-
-    /* Floating animation */
-    @keyframes floatBubble {
-      0% {
-        transform: translateY(0) translateZ(0) rotate(0deg);
-        filter: drop-shadow(0 0 6px rgba(0, 188, 212, 0.7));
-      }
-      50% {
-        transform: translateY(-8px) translateZ(10px) rotate(5deg);
-        filter: drop-shadow(0 0 14px rgba(0, 255, 255, 0.9));
-      }
-      100% {
-        transform: translateY(0) translateZ(0) rotate(0deg);
-        filter: drop-shadow(0 0 6px rgba(0, 188, 212, 0.7));
-      }
-    }
-
-    /* Hover effect on skills */
-    .skill:hover {
-      background: linear-gradient(135deg, #00fff7, #008080);
-      box-shadow: 0 6px 25px rgba(0, 255, 255, 0.9);
-      transform: scale(1.15);
-      z-index: 10;
-      filter: drop-shadow(0 0 18px rgba(0, 255, 255, 1));
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-      }
-      .skill {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
-      }
-      .filter-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -245,127 +161,147 @@
     <section id="experience">
       <h2>Work Experience</h2>
       <ul class="details-list">
-        <li><strong>Data Analyst</strong><br>Cognizant Technology Solutions, Hyderabad, India | May 2022 – Mar 2023<br>
-          • Designed and optimized 20+ ETL pipelines using Azure Data Factory to unify structured and unstructured banking data, accelerating credit risk analytics and reducing manual preparation time by 40%.<br>
-          • Developed SQL-driven financial models to automate loan performance tracking, credit risk assessment, and profitability analysis, improving forecasting accuracy by 20%.<br>
-          • Built Python-based anomaly detection models that flagged suspicious loan transactions, enhancing audit readiness and reducing compliance risks by 35%.<br>
-          • Standardized customer and loan product data across systems, enhancing data consistency and supporting enterprise-wide data governance efforts.<br>
-          • Delivered interactive Power BI dashboards highlighting loan trends, default risk segments, and portfolio performance, improving strategic decision-making speed by 50%.<br>
-          • Leveraged Azure Synapse Analytics and Databricks for large-scale data processing, improving query performance and reducing data pipeline execution time by 40%.<br>
-          • Ensured compliance with banking data governance and financial reporting standards, improving regulatory audit readiness.
+        <li><strong>Data Analyst</strong><br>Cognizant Technology Solutions, Hyderabad, India | May 2022 – Mar 2023
+          <ul>
+            <li>Designed and optimized 20+ ETL pipelines using Azure Data Factory to unify structured and unstructured banking data, accelerating credit risk analytics and reducing manual preparation time by 40%.</li>
+            <li>Developed SQL-driven financial models to automate loan performance tracking, credit risk assessment, and profitability analysis, improving forecasting accuracy by 20%.</li>
+            <li>Built Python-based anomaly detection models that flagged suspicious loan transactions, enhancing audit readiness and reducing compliance risks by 35%.</li>
+            <li>Standardized customer and loan product data across systems, enhancing data consistency and supporting enterprise-wide data governance efforts.</li>
+            <li>Delivered interactive Power BI dashboards highlighting loan trends, default risk segments, and portfolio performance, improving strategic decision-making speed by 50%.</li>
+            <li>Leveraged Azure Synapse Analytics and Databricks for large-scale data processing, improving query performance and reducing data pipeline execution time by 40%.</li>
+            <li>Ensured compliance with banking data governance and financial reporting standards, improving regulatory audit readiness.</li>
+          </ul>
         </li>
-        <li><strong>Data Analyst</strong><br>Quadient Technologies Pvt Ltd, Bengaluru, Karnataka | Mar 2018 – May 2022<br>
-          • Engineered and maintained robust ETL workflows integrating data from disparate sources, enhancing accessibility for cross-functional analytics across 10+ business units.<br>
-          • Automated reconciliation workflows, reducing manual effort by 60% and decreasing turnaround time from 5 to 2 days.<br>
-          • Created SQL and Power BI-based financial reporting models, automating cost analysis and profitability tracking, leading to a 20% improvement in financial forecasting accuracy.<br>
-          • Developed Python models that identified infrastructure bottlenecks, enabling $500K annual cost savings through optimized server allocations.<br>
-          • Implemented master data modeling and governance standards, streamlining reporting processes and reducing data inconsistencies by 20%.<br>
-          • Enabled real-time tracking of KPIs for revenue, customer performance, and operational metrics through dynamic dashboards, reducing reporting cycle times by 25%.<br>
-          • Led automation of data reconciliation between transactional systems and reporting databases, reducing manual workload by 40% and improving reporting accuracy.
+        <li><strong>Data Analyst</strong><br>Quadient Technologies Pvt Ltd, Bengaluru, Karnataka | Mar 2018 – May 2022
+          <ul>
+            <li>Engineered and maintained robust ETL workflows integrating data from disparate sources, enhancing accessibility for cross-functional analytics across 10+ business units.</li>
+            <li>Automated reconciliation workflows, reducing manual effort by 60% and decreasing turnaround time from 5 to 2 days.</li>
+            <li>Created SQL and Power BI-based financial reporting models, automating cost analysis and profitability tracking, leading to a 20% improvement in financial forecasting accuracy.</li>
+            <li>Developed Python models that identified infrastructure bottlenecks, enabling $500K annual cost savings through optimized server allocations.</li>
+            <li>Implemented master data modeling and governance standards, streamlining reporting processes and reducing data inconsistencies by 20%.</li>
+            <li>Enabled real-time tracking of KPIs for revenue, customer performance, and operational metrics through dynamic dashboards, reducing reporting cycle times by 25%.</li>
+            <li>Led automation of data reconciliation between transactional systems and reporting databases, reducing manual workload by 40% and improving reporting accuracy.</li>
+          </ul>
         </li>
       </ul>
     </section>
 
     <section id="skills">
       <h2>Technical Skills</h2>
-      <div class="skills-cloud">
-        <span class="skill">Python (Pandas, Jupyter)</span>
-        <span class="skill">SQL (T-SQL, Stored Procedures)</span>
-        <span class="skill">NoSQL</span>
-        <span class="skill">JavaScript (Node.js, React)</span>
-        <span class="skill">Power BI (DAX, Advanced Filtering)</span>
-        <span class="skill">Tableau</span>
-        <span class="skill">Google Data Studio</span>
-        <span class="skill">Data Cleaning & Transformation</span>
-        <span class="skill">Modeling & Performance Optimization</span>
-        <span class="skill">Multi-source Integration</span>
-        <span class="skill">Azure Data Factory</span>
-        <span class="skill">Synapse Analytics</span>
-        <span class="skill">Databricks</span>
-        <span class="skill">AWS</span>
-        <span class="skill">DevOps (CI/CD, GitHub Actions)</span>
-        <span class="skill">Cybersecurity Tools</span>
-        <span class="skill">SQL Server & SSMS</span>
-        <span class="skill">Excel & Power Query</span>
-        <span class="skill">Jira</span>
-      </div>
+      <div class="skill-item">Python (Pandas, Jupyter), SQL (T-SQL, Stored Procedures), NoSQL, JavaScript (Node.js, React)</div>
+      <div class="skill-item">Power BI (DAX, Advanced Filtering), Tableau, Google Data Studio</div>
+      <div class="skill-item">Data Cleaning, Transformation, Modeling, Performance Optimization, Multi-source Integration</div>
+      <div class="skill-item">Azure Data Factory, Synapse Analytics, Databricks, AWS, DevOps (CI/CD, GitHub Actions), Cybersecurity Tools</div>
+      <div class="skill-item">SQL Server, SSMS, Excel, Power Query, Jira</div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="details-list">
+        <li class="cert-item">Data Analyst Associate, AI Fundamentals – Data Camp</li>
+        <li class="cert-item">Power BI: Integrating AI and Machine Learning, Tableau 2024.1 – LinkedIn</li>
+        <li class="cert-item">SQL (Advanced) – Hacker Rank</li>
+        <li class="cert-item">Microsoft Azure Fundamentals – Microsoft Learn</li>
+        <li class="cert-item">AWS Cloud Badges, Selenium WebDriver – Udemy</li>
+        <li class="cert-item">SQL & React JS Certification – Frontlines EduTech</li>
+      </ul>
     </section>
 
     <section id="projects">
-  <h2>Projects & Data Solutions</h2>
-  <div class="filter-controls" role="tablist" aria-label="Filter projects by technology">
-    <button class="filter-btn active" aria-selected="true" data-filter="all" role="tab" tabindex="0">All</button>
-    <button class="filter-btn" aria-selected="false" data-filter="powerbi" role="tab" tabindex="0">Power BI</button>
-    <button class="filter-btn" aria-selected="false" data-filter="python" role="tab" tabindex="0">Python</button>
-    <button class="filter-btn" aria-selected="false" data-filter="tableau" role="tab" tabindex="0">Tableau</button>
-    <button class="filter-btn" aria-selected="false" data-filter="sql" role="tab" tabindex="0">SQL</button>
-    <button class="filter-btn" aria-selected="false" data-filter="excel" role="tab" tabindex="0">Excel</button>
-  </div>
+      <h2>Projects & Data Solutions</h2>
+      <div class="filter-controls" role="tablist" aria-label="Filter projects by technology">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="powerbi">Power BI</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="tableau">Tableau</button>
+        <button class="filter-btn" data-filter="sql">SQL</button>
+        <button class="filter-btn" data-filter="excel">Excel</button>
+      </div>
 
-  <div class="project-item powerbi python sql" tabindex="0">
-    <strong>Health Insurance Data Deep Dive | Jan 2025 – May 2025</strong><br>
-    • Engineered a complete data pipeline using Python (Pandas) for automated ETL, rigorous cleaning, and feature enrichment.<br>
-    • Modeled structured datasets into a relational SQLite database, optimizing query performance and data accessibility for reporting. Developed a 4-page interactive Power BI dashboard to analyze cost drivers, risk groups, and regional premium variations, enabling targeted strategy recommendations.<br>
-    • Performed advanced exploratory data analysis (EDA) using Seaborn and Matplotlib to uncover correlations across BMI, age, smoking habits, and region.<br>
-    • Applied DAX and slicers for dynamic filtering and KPI tracking, allowing real-time insights into healthcare expenditure and high-risk population segments.<br>
-    <em>Tools:</em> Python (Pandas, Matplotlib, Seaborn), SQLite, Power BI, DAX, Power Query
-  </div>
+      <!-- Health Insurance Data Deep Dive -->
+      <div class="project-item powerbi python sql">
+        <button class="accordion-button" aria-expanded="false">Health Insurance Data Deep Dive | Jan 2025 – May 2025</button>
+        <div class="accordion-content" aria-hidden="true">
+          <p>Engineered a complete data pipeline using Python (Pandas) for automated ETL, rigorous cleaning, and feature enrichment.</p>
+          <p>Modeled structured datasets into a relational SQLite database, optimizing query performance and data accessibility for reporting. Developed a 4-page interactive Power BI dashboard to analyze cost drivers, risk groups, and regional premium variations, enabling targeted strategy recommendations.</p>
+          <p>Performed advanced exploratory data analysis (EDA) using Seaborn and Matplotlib to uncover correlations across BMI, age, smoking habits, and region.</p>
+          <p>Applied DAX and slicers for dynamic filtering and KPI tracking, allowing real-time insights into healthcare expenditure and high-risk population segments.</p>
+          <p><em>Tools:</em> Python (Pandas, Matplotlib, Seaborn), SQLite, Power BI, DAX, Power Query</p>
+        </div>
+      </div>
 
-  <div class="project-item powerbi python" tabindex="0">
-    <strong>Business Intelligence Dashboard: Sales Operations Analytics | Jan 2025 – May 2025</strong><br>
-    • Developed a comprehensive data analysis and BI solution for a large historical car sales dataset (50,000+ records) using Python (Jupyter Notebook) and Power BI.<br>
-    • Cleaned and preprocessed sales data with Python, ensuring quality and reliability for analysis.<br>
-    • Delivered an interactive Power BI dashboard that highlighted pricing trends, top-performing models, and sales opportunities, informing inventory planning.<br>
-    • Implemented advanced DAX measures (YTD, MTD, YoY) for sales, average price, and units sold, enabling robust trend analysis.<br>
-    • Created diverse visualizations for sales trends, average prices by features, geographical distribution, and car characteristics.<br>
-    • Managed project lifecycle including Python scripts and Power BI files using Git and GitHub for version control.<br>
-    <em>Tools:</em> Python (Pandas, Jupyter), Power BI, DAX, Git, GitHub
-  </div>
+      <!-- Business Intelligence Dashboard: Sales Operations Analytics -->
+      <div class="project-item powerbi python">
+        <button class="accordion-button" aria-expanded="false">Business Intelligence Dashboard: Sales Operations Analytics | Jan 2025 – May 2025</button>
+        <div class="accordion-content" aria-hidden="true">
+          <p>Developed a comprehensive data analysis and BI solution for a large historical car sales dataset (50,000+ records) using Python (Jupyter Notebook) and Power BI.</p>
+          <p>Cleaned and preprocessed sales data with Python, ensuring quality and reliability for analysis.</p>
+          <p>Delivered an interactive Power BI dashboard that highlighted pricing trends, top-performing models, and sales opportunities, informing inventory planning.</p>
+          <p>Implemented advanced DAX measures (YTD, MTD, YoY) for sales, average price, and units sold, enabling robust trend analysis.</p>
+          <p>Created diverse visualizations for sales trends, average prices by features, geographical distribution, and car characteristics.</p>
+          <p>Managed project lifecycle including Python scripts and Power BI files using Git and GitHub for version control.</p>
+          <p><em>Tools:</em> Python (Pandas, Jupyter), Power BI, DAX, Git, GitHub</p>
+        </div>
+      </div>
 
-  <div class="project-item tableau powerbi" tabindex="0">
-    <strong>The Scroll Trap: Social Media, Productivity & Well-being Analysis in Power BI & Tableau | Jan 2025 – May 2025</strong><br>
-    • Cleaned and transformed behavioral data from 30,000 users to uncover digital wellness trends and guide productivity interventions.<br>
-    • Created dual dashboards that exposed a -0.56 correlation between screen time and productivity, exposing key behavioral insights across user segments.<br>
-    • Delivered actionable recommendations via segmented visuals, aiding time management and digital balance strategies.<br>
-    <em>Tools:</em> Power BI, Tableau, DAX, Decomposition Tree, Key Influencers, Excel
-  </div>
+      <!-- The Scroll Trap -->
+      <div class="project-item powerbi tableau">
+        <button class="accordion-button" aria-expanded="false">The Scroll Trap: Social Media, Productivity & Well-being Analysis in Power BI & Tableau | Jan 2025 – May 2025</button>
+        <div class="accordion-content" aria-hidden="true">
+          <p>Cleaned and transformed behavioral data from 30,000 users to uncover digital wellness trends and guide productivity interventions.</p>
+          <p>Created dual dashboards that exposed a -0.56 correlation between screen time and productivity, exposing key behavioral insights across user segments.</p>
+          <p>Delivered actionable recommendations via segmented visuals, aiding time management and digital balance strategies.</p>
+          <p><em>Tools:</em> Power BI, Tableau, DAX, Decomposition Tree, Key Influencers, Excel</p>
+        </div>
+      </div>
 
-  <div class="project-item powerbi" tabindex="0">
-    <strong>Learning Employability Analytics Application Dashboard | Saint Louis University | Jan 2025 – May 2025</strong><br>
-    • Developed a Power BI dashboard that visualized employability readiness by course completions, advisor usage, and engagement, helping students prioritize high-impact skills.<br>
-    • Created an Employability Readiness Score using DAX, blending course completions, engagement, and advisor metrics.<br>
-    • Standardized and transformed multi-source data with Power Query, applying a unified skill taxonomy for consistent analysis.<br>
-    • Implemented interactive filters and KPIs to guide students in evaluating learning paths and identifying high-impact skills.<br>
-    • Applied user-centered design based on student feedback to ensure clarity, interactivity, and relevance of insights.<br>
-    <em>Tools:</em> Power BI, DAX, Power Query, Excel
-  </div>
+      <!-- Learning Employability Analytics Application Dashboard -->
+      <div class="project-item powerbi">
+        <button class="accordion-button" aria-expanded="false">Learning Employability Analytics Application Dashboard | Saint Louis University | Jan 2025 – May 2025</button>
+        <div class="accordion-content" aria-hidden="true">
+          <p>Developed a Power BI dashboard that visualized employability readiness by course completions, advisor usage, and engagement, helping students prioritize high-impact skills.</p>
+          <p>Created an Employability Readiness Score using DAX, blending course completions, engagement, and advisor metrics.</p>
+          <p>Standardized and transformed multi-source data with Power Query, applying a unified skill taxonomy for consistent analysis.</p>
+          <p>Implemented interactive filters and KPIs to guide students in evaluating learning paths and identifying high-impact skills.</p>
+          <p>Applied user-centered design based on student feedback to ensure clarity, interactivity, and relevance of insights.</p>
+          <p><em>Tools:</em> Power BI, DAX, Power Query, Excel</p>
+        </div>
+      </div>
 
-  <div class="project-item powerbi" tabindex="0">
-    <strong>Data Visualization with U.S. Census Bureau, Housing & Economic Insights | Saint Louis University | Jan 2025 – Mar 2025</strong><br>
-    • Built Power BI dashboards that highlighted economic disparities and housing affordability trends, guiding localized policy analysis.<br>
-    • Cleaned, transformed, and modeled data, applying DAX to create calculated columns and measures for in-depth analysis.<br>
-    • Designed dynamic reports with filters and slicers to enhance user experience and facilitate data-driven decision-making.<br>
-    <em>Tools:</em> Power BI, DAX, Slicers/Filters, Excel
-  </div>
+      <!-- Data Visualization with U.S. Census Bureau -->
+      <div class="project-item powerbi">
+        <button class="accordion-button" aria-expanded="false">Data Visualization with U.S. Census Bureau, Housing & Economic Insights | Saint Louis University | Jan 2025 – Mar 2025</button>
+        <div class="accordion-content" aria-hidden="true">
+          <p>Built Power BI dashboards that highlighted economic disparities and housing affordability trends, guiding localized policy analysis.</p>
+          <p>Cleaned, transformed, and modeled data, applying DAX to create calculated columns and measures for in-depth analysis.</p>
+          <p>Designed dynamic reports with filters and slicers to enhance user experience and facilitate data-driven decision-making.</p>
+          <p><em>Tools:</em> Power BI, DAX, Slicers/Filters, Excel</p>
+        </div>
+      </div>
 
-  <div class="project-item sql python powerbi tableau" tabindex="0">
-    <strong>Data Visualization Associate Virtual Internship | Excelerate Global Internship Program | Jan 2024 – Feb 2024</strong><br>
-    • Extracted and analyzed large datasets using SQL and Python, improving data accuracy by 30%.<br>
-    • Developed interactive dashboards and visualizations with Google Data Studio, Power BI, and Tableau, reducing manual reporting time by 40%.<br>
-    • Identified key business trends, KPIs, and process inefficiencies, providing actionable insights.<br>
-    • Streamlined ETL workflows, accelerating data refresh cycles from 24 hours to under 6 hours.<br>
-    <em>Tools:</em> SQL, Python, Power BI, Tableau, Google Data Studio
-  </div>
+      <!-- Data Visualization Associate Virtual Internship -->
+      <div class="project-item sql python powerbi tableau googledatastudio">
+        <button class="accordion-button" aria-expanded="false">Data Visualization Associate Virtual Internship | Excelerate Global Internship Program | Jan 2024 – Feb 2024</button>
+        <div class="accordion-content" aria-hidden="true">
+          <p>Extracted and analyzed large datasets using SQL and Python, improving data accuracy by 30%.</p>
+          <p>Developed interactive dashboards and visualizations with Google Data Studio, Power BI, and Tableau, reducing manual reporting time by 40%.</p>
+          <p>Identified key business trends, KPIs, and process inefficiencies, providing actionable insights.</p>
+          <p>Streamlined ETL workflows, accelerating data refresh cycles from 24 hours to under 6 hours.</p>
+          <p><em>Tools:</em> SQL, Python, Power BI, Tableau, Google Data Studio</p>
+        </div>
+      </div>
 
-  <div class="project-item excel" tabindex="0">
-    <strong>Digital Strategy Virtual Internship | Excelerate Global Internship Program | Jan 2024 – Feb 2024</strong><br>
-    • Conducted market research and asset evaluation to enhance business strategies.<br>
-    • Implemented the RACE Framework to analyze 10+ digital campaigns, boosting email CTR by 15% and social engagement by 25%.<br>
-    • Optimized social media engagement, email campaigns, and customer targeting using data-driven insights.<br>
-    <em>Tools:</em> Excel, Google Analytics, Email Marketing Platforms, Social Media Insights
-  </div>
-</section>
-
+      <!-- Digital Strategy Virtual Internship -->
+      <div class="project-item excel googleanalytics emailmarketing socialmedia">
+        <button class="accordion-button" aria-expanded="false">Digital Strategy Virtual Internship | Excelerate Global Internship Program | Jan 2024 – Feb 2024</button>
+        <div class="accordion-content" aria-hidden="true">
+          <p>Conducted market research and asset evaluation to enhance business strategies.</p>
+          <p>Implemented the RACE Framework to analyze 10+ digital campaigns, boosting email CTR by 15% and social engagement by 25%.</p>
+          <p>Optimized social media engagement, email campaigns, and customer targeting using data-driven insights.</p>
+          <p><em>Tools:</em> Excel, Google Analytics, Email Marketing Platforms, Social Media Insights</p>
+        </div>
+      </div>
+    </section>
 
     <section id="contact">
       <h2>Contact</h2>
@@ -383,12 +319,30 @@
   </footer>
 
   <script>
+    // Accordion toggle
+    document.querySelectorAll('.accordion-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        if (expanded) {
+          content.style.display = "none";
+          button.setAttribute('aria-expanded', 'false');
+          content.setAttribute('aria-hidden', 'true');
+        } else {
+          content.style.display = "block";
+          button.setAttribute('aria-expanded', 'true');
+          content.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+
+    // Project filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
-        document.querySelector('.filter-btn.active')?.classList.remove('active');
+        document.querySelector('.filter-btn.active').classList.remove('active');
         button.classList.add('active');
 
         const filter = button.getAttribute('data-filter');
