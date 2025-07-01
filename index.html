@@ -312,7 +312,7 @@
         <li>Extracted, cleaned, and analyzed large datasets using SQL and Python, reported accuracy by 30%.</li>
             <li>Developed interactive dashboards and data visualizations using Google Data Studio, Power BI, and Tableau reducing manual reporting by 30%.</li>
             <li>Identified key business trends, KPIs, and process inefficiencies, providing actionable insights.</li>
-            <li>Streamlined ETL workflows, accelerating data refresh cycles from 24 hours to under 6 hours.<li>
+            <li>Streamlined ETL workflows, accelerating data refresh cycles from 24 hours to under 6 hours.</li>
       </ul>
     </div>
 
@@ -332,7 +332,7 @@
       <ul>
         <li>Designed and optimized banking for 20+ ETL pipelines using Azure Data Factory and SQL Server, integrating structured and unstructured financial data across multiple regions.</li>
             <li>Developed SQL-driven financial models, automating loan performance tracking, credit risk assessment, and profitability analysis, improving forecasting accuracy by 20%.</li>
-            <li>Built Python-based anomaly detection models, identifying discrepancies in loan disbursement, repayments, and customer transactions, strengthening regulatory compliance and audit readiness by 35%..</li>
+            <li>Built Python-based anomaly detection models, identifying discrepancies in loan disbursement, repayments, and customer transactions, strengthening regulatory compliance and audit readiness by 35%.</li>
             <li>Implemented data standardization frameworks reducing reporting discrepancies by 25%.</li>
             <li>Designed and deployed Power BI dashboards improving strategic decision-making speed by 50%.</li>
             <li>Leveraged Azure Synapse Analytics and Databricks for large-scale data processing, reducing data pipeline execution time by 40%.</li>
@@ -345,7 +345,7 @@
       <p><em>Quadient | Mar 2018 – May 2022</em></p>
       <ul>
         <li>Designed and optimized ETL workflows integrating structured and unstructured data from multiple sources, improving data accessibility for real-time analytics across 10+ business units.</li>
-            <li>Automated reconciliation workflows, reducing manual effort by 60% and reported turnaround time from 5 to 2 days.<li>
+            <li>Automated reconciliation workflows, reducing manual effort by 60% and reported turnaround time from 5 to 2 days.</li>
             <li>Developed SQLand Power BI based financial reporting models automating cost analysis and profitability tracking, leading to a 20% improvement in financial forecasting accuracy.</li>
             <li>Built predictive models in Python analyzing infrastructure performance, optimizing server allocations, reducing operational costs by $500K annually.</li>
             <li>Implemented master data governance framework reducing data discrepancies by 20%.</li>
@@ -547,11 +547,16 @@
         const filter = btn.getAttribute("data-filter");
 
         projectItems.forEach(item => {
-          if (filter === "all" || item.getAttribute("data-category") === filter) {
+          if (
+            filter === "all" || 
+            item.getAttribute("data-category").split(" ").includes(filter)
+          ) {
             item.classList.remove("hidden");
           } else {
+
             item.classList.add("hidden");
           }
+
         });
       });
     });
