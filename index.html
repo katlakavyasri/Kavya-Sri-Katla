@@ -97,23 +97,26 @@
       margin-bottom: 1rem;
     }
 
-    .skills-filters button {
-      background-color: #222;
-      color: #fff;
-      border: 1px solid #555;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
 
-    .skills-filters button.active,
-    .skills-filters button[aria-selected="true"] {
-      background-color: #007BFF;
-      border-color: #007BFF;
-      cursor: default;
-    }
+
+    btn.classList.add("active");
+    btn.setAttribute("aria-selected", "true");
+    btn.setAttribute("tabindex", "0");
+    btn.focus();
+
+    const filter = btn.getAttribute("data-filter");
+
+    skillItems.forEach(item => {
+      const categories = item.getAttribute("data-category").split(" ");
+      if (filter === "all" || categories.includes(filter)) {
+        item.classList.remove("hidden");
+      } else {
+        item.classList.add("hidden");
+      }
+    });
+  });
+});
+
 
     /* Skill items grid */
     .skills-grid {
@@ -143,6 +146,62 @@
       overflow: hidden;
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
+    .skill-item {
+  background-color: #1e1e1e;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #444;
+  color: #ddd;
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 38px;
+  white-space: nowrap;
+  position: relative; /* for tooltip */
+  outline-offset: 2px;
+}
+
+.skill-item:hover,
+.skill-item:focus {
+  background-color: #333;
+  cursor: default;
+  outline: none;
+}
+
+/* Hidden skill items */
+.skill-item.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Tooltip styling */
+.skill-item[title]:hover::after,
+.skill-item[title]:focus::after {
+  content: attr(title);
+  position: absolute;
+  background: #00bcd4;
+  color: #121212;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 6px;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
 
     /* Projects filter buttons */
     .projects-filters {
@@ -447,46 +506,46 @@
 
   <div class="skills-grid" id="skills-list">
     <!-- Programming & Database -->
-    <div class="skill-item" data-category="programming">Python</div>
-    <div class="skill-item" data-category="programming">SQL (T-SQL, stored procedures)</div>
-    <div class="skill-item" data-category="programming">NoSQL</div>
-    <div class="skill-item" data-category="programming">JavaScript (Node.js, React)</div>
+    <div class="skill-item" tabindex="0" data-category="programming etl" title="Proficient in Python scripting for automation and ETL processes">🐍 Python</div>
+    <div class="skill-item" tabindex="0" data-category="programming" title="Advanced SQL querying, stored procedures, and performance tuning">🗄️ SQL (T-SQL, stored procedures)</div>
+    <div class="skill-item" tabindex="0" data-category="programming" title="Experience with NoSQL databases like MongoDB">📂 NoSQL</div>
+    <div class="skill-item" tabindex="0" data-category="programming" title="JavaScript for backend (Node.js) and frontend (React)">⚛️ JavaScript (Node.js, React)</div>
 
     <!-- Data Visualization & BI -->
-    <div class="skill-item" data-category="visualization">Power BI (DAX, Dashboard Design)</div>
-    <div class="skill-item" data-category="visualization">Tableau</div>
-    <div class="skill-item" data-category="visualization">Google Data Studio</div>
+    <div class="skill-item" tabindex="0" data-category="visualization" title="Power BI expertise including DAX and dashboard design">📊 Power BI (DAX, Dashboard Design)</div>
+    <div class="skill-item" tabindex="0" data-category="visualization" title="Tableau Desktop and Server for data visualization">📈 Tableau</div>
+    <div class="skill-item" tabindex="0" data-category="visualization" title="Google Data Studio for report building">📋 Google Data Studio</div>
 
     <!-- Data Engineering & ETL -->
-    <div class="skill-item" data-category="etl">Data Cleaning</div>
-    <div class="skill-item" data-category="etl">Transformation</div>
-    <div class="skill-item" data-category="etl">ETL Processes</div>
-    <div class="skill-item" data-category="etl">Performance Optimization</div>
+    <div class="skill-item" tabindex="0" data-category="etl" title="Data cleaning and transformation best practices">🧹 Data Cleaning</div>
+    <div class="skill-item" tabindex="0" data-category="etl" title="ETL process design and optimization">🔄 ETL Processes</div>
+    <div class="skill-item" tabindex="0" data-category="etl" title="Performance tuning for data workflows">⚡ Performance Optimization</div>
+    <div class="skill-item" tabindex="0" data-category="etl" title="Data transformation techniques">🔧 Transformation</div>
 
     <!-- Software Testing & Automation -->
-    <div class="skill-item" data-category="testing">Selenium</div>
-    <div class="skill-item" data-category="testing">Manual & Automated Testing</div>
-    <div class="skill-item" data-category="testing">Defect Tracking</div>
+    <div class="skill-item" tabindex="0" data-category="testing" title="Selenium automation for web testing">🧪 Selenium</div>
+    <div class="skill-item" tabindex="0" data-category="testing" title="Manual and automated testing methodologies">🔍 Manual & Automated Testing</div>
+    <div class="skill-item" tabindex="0" data-category="testing" title="Defect tracking and resolution">🐞 Defect Tracking</div>
 
     <!-- Cloud & Security -->
-    <div class="skill-item" data-category="cloud">Microsoft Azure</div>
-    <div class="skill-item" data-category="cloud">Amazon Web Services (AWS)</div>
-    <div class="skill-item" data-category="cloud">DevOps (CI/CD, GitHub Actions)</div>
-    <div class="skill-item" data-category="cloud">Cybersecurity Basics (Nmap, Nessus)</div>
+    <div class="skill-item" tabindex="0" data-category="cloud" title="Microsoft Azure cloud services">☁️ Microsoft Azure</div>
+    <div class="skill-item" tabindex="0" data-category="cloud" title="Amazon Web Services (AWS)">☁️ Amazon Web Services (AWS)</div>
+    <div class="skill-item" tabindex="0" data-category="cloud" title="DevOps with CI/CD pipelines (GitHub Actions)">🔧 DevOps (CI/CD, GitHub Actions)</div>
+    <div class="skill-item" tabindex="0" data-category="cloud" title="Basic cybersecurity tools and techniques">🔐 Cybersecurity Basics (Nmap, Nessus)</div>
 
     <!-- Tools & Platforms -->
-    <div class="skill-item" data-category="tools">SQL Server</div>
-    <div class="skill-item" data-category="tools">SSMS</div>
-    <div class="skill-item" data-category="tools">Jira</div>
-    <div class="skill-item" data-category="tools">GitHub</div>
-    <div class="skill-item" data-category="tools">Excel</div>
-    <div class="skill-item" data-category="tools">PowerPoint</div>
+    <div class="skill-item" tabindex="0" data-category="tools" title="Microsoft SQL Server & Management Studio">🛠️ SQL Server</div>
+    <div class="skill-item" tabindex="0" data-category="tools" title="SQL Server Management Studio (SSMS)">🛠️ SSMS</div>
+    <div class="skill-item" tabindex="0" data-category="tools" title="Project tracking with Jira">📋 Jira</div>
+    <div class="skill-item" tabindex="0" data-category="tools" title="Version control with GitHub">🐙 GitHub</div>
+    <div class="skill-item" tabindex="0" data-category="tools" title="Advanced Excel skills">📊 Excel</div>
+    <div class="skill-item" tabindex="0" data-category="tools" title="Presentation skills with PowerPoint">📽️ PowerPoint</div>
 
     <!-- Soft Skills -->
-    <div class="skill-item" data-category="soft">Communication</div>
-    <div class="skill-item" data-category="soft">Collaboration</div>
-    <div class="skill-item" data-category="soft">Problem-solving</div>
-    <div class="skill-item" data-category="soft">Time Management</div>
+    <div class="skill-item" tabindex="0" data-category="soft" title="Clear communication and stakeholder management">💬 Communication</div>
+    <div class="skill-item" tabindex="0" data-category="soft" title="Team collaboration and leadership">🤝 Collaboration</div>
+    <div class="skill-item" tabindex="0" data-category="soft" title="Analytical problem-solving">🧠 Problem-solving</div>
+    <div class="skill-item" tabindex="0" data-category="soft" title="Efficient time management">⏰ Time Management</div>
   </div>
 </section>
 
@@ -583,12 +642,13 @@
         const filter = btn.getAttribute("data-filter");
 
         skillItems.forEach(item => {
-          if (filter === "all" || item.getAttribute("data-category") === filter) {
+          const categories = item.getAttribute("data-category").split(" ");
+          if (filter === "all" || categories.includes(filter)) {
             item.classList.remove("hidden");
           } else {
-            item.classList.add("hidden");
+    item.classList.add("hidden");
           }
-        });
+        });      
       });
     });
 
